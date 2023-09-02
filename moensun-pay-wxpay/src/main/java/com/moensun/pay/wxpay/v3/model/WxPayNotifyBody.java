@@ -10,7 +10,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WxPayNotify {
+public class WxPayNotifyBody {
     private String id;
     @JsonProperty(value = "create_time")
     private String createTime;

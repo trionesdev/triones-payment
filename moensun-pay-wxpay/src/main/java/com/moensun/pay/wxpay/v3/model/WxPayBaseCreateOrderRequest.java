@@ -1,6 +1,7 @@
-package com.moensun.pay.wxpay.v3.request;
+package com.moensun.pay.wxpay.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.moensun.pay.wxpay.v3.model.Amount;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -38,14 +39,6 @@ public abstract class WxPayBaseCreateOrderRequest implements Serializable {
     @JsonProperty(value = "settle_info")
     private SettleInfo settleInfo;
 
-    @Data
-    @SuperBuilder
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class Amount{
-        private int total;
-        private String currency;
-    }
 
 
 

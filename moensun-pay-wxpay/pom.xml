@@ -24,14 +24,19 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>com.github.wechatpay-apiv3</groupId>
+            <artifactId>wechatpay-java</artifactId>
+            <version>0.2.11</version>
+        </dependency>
+        <dependency>
             <groupId>com.moensun.pay</groupId>
             <artifactId>moensun-pay-commons</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.wechatpay-apiv3</groupId>
-            <artifactId>wechatpay-apache-httpclient</artifactId>
-            <version>0.4.9</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.wechatpay-apiv3</groupId>-->
+<!--            <artifactId>wechatpay-apache-httpclient</artifactId>-->
+<!--            <version>0.4.9</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>

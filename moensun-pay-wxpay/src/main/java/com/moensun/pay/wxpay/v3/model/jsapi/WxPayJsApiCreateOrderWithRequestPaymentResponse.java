@@ -1,4 +1,4 @@
-package com.moensun.pay.wxpay.v3.request;
+package com.moensun.pay.wxpay.v3.model.jsapi;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,12 +7,17 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
+/**
+ * jsapi调起支付需要的参数
+ */
 @Data
 @SuperBuilder
-@NoArgsConstructor
 @AllArgsConstructor
-public abstract class WxPaySignRequest implements Serializable {
+@NoArgsConstructor
+public class WxPayJsApiCreateOrderWithRequestPaymentResponse implements Serializable {
     private String appId;
     private String timeStamp;
     private String nonceStr;
+    private String packageStr;
+    private String paySign;
 }

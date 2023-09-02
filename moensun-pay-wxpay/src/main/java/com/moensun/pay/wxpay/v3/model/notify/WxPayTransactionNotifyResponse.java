@@ -1,4 +1,4 @@
-package com.moensun.pay.wxpay.v3.model;
+package com.moensun.pay.wxpay.v3.model.notify;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import java.io.Serializable;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WxPayNotifyResourceDecrypt implements Serializable {
+public class WxPayTransactionNotifyResponse implements Serializable {
     @JsonProperty(value = "mchid")
     private String mchId;
     @JsonProperty(value = "appid")
@@ -25,9 +25,9 @@ public class WxPayNotifyResourceDecrypt implements Serializable {
     @JsonProperty(value = "transaction_id")
     private String transactionId;
     @JsonProperty(value = "trade_type")
-    private String tradeType;
+    private TradeTypeEnum tradeType;
     @JsonProperty(value = "trade_state")
-    private String tradeState;
+    private TradeStateEnum tradeState;
     @JsonProperty(value = "trade_state_desc")
     private String tradeStateDesc;
     @JsonProperty(value = "bank_type")
@@ -59,5 +59,25 @@ public class WxPayNotifyResourceDecrypt implements Serializable {
         private String currency;
         @JsonProperty(value = "payer_currency")
         private String payerCurrency;
+    }
+
+    public enum TradeStateEnum {
+        SUCCESS,
+        REFUND,
+        NOTPAY,
+        CLOSED,
+        REVOKED,
+        USERPAYING,
+        PAYERROR,
+        ACCEPT
+    }
+
+    public enum TradeTypeEnum {
+        JSAPI,
+        NATIVE,
+        APP,
+        MICROPAY,
+        MWEB,
+        FACEPAY
     }
 }
