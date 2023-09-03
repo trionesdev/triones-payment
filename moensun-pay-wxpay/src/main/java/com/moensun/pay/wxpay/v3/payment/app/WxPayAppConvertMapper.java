@@ -14,12 +14,10 @@ import org.mapstruct.factory.Mappers;
 public interface WxPayAppConvertMapper {
     WxPayAppConvertMapper INSTANCE = Mappers.getMapper(WxPayAppConvertMapper.class);
 
-    @Mappings(
-            value = {
-                    @Mapping(source = "appId", target = "appid"),
-                    @Mapping(source = "mchId", target = "mchid")
-            }
-    )
+    @Mappings(value = {
+            @Mapping(source = "appId", target = "appid"),
+            @Mapping(source = "mchId", target = "mchid")
+    })
     PrepayRequest from(WxPayAppCreateOrderRequest args);
 
     WxPayAppCreateOrderResponse from(PrepayResponse args);
