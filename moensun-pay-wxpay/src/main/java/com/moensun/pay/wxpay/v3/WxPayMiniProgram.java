@@ -9,4 +9,7 @@ import com.moensun.pay.wxpay.v3.model.jsapi.WxPayJsApiCreateOrderWithRequestPaym
  */
 public class WxPayMiniProgram extends WxPayBase {
 
+    public WxPayMiniProgram(WxPayConfig wxPayConfig) {
+        super(wxPayConfig);
+    }
 }

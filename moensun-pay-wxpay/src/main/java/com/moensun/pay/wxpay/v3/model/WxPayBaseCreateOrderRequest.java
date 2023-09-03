@@ -1,11 +1,12 @@
 package com.moensun.pay.wxpay.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.moensun.pay.wxpay.v3.model.Amount;
+import com.moensun.pay.wxpay.v3.WxPayConfig;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
 import java.util.List;
@@ -40,27 +41,11 @@ public abstract class WxPayBaseCreateOrderRequest implements Serializable {
     private SettleInfo settleInfo;
 
 
-
-
     @Data
     @SuperBuilder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class SceneInfo{
-        @JsonProperty(value = "payer_client_ip")
-        private String payerClientIp;
-        @JsonProperty(value = "device_id")
-        private String deviceId;
-        @JsonProperty(value = "store_info")
-        private StoreInfo storeInfo;
-    }
-
-
-    @Data
-    @SuperBuilder
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class  SettleInfo{
+    public static class SettleInfo {
         @JsonProperty(value = "profit_sharing")
         private boolean profitSharing;
     }
@@ -69,7 +54,7 @@ public abstract class WxPayBaseCreateOrderRequest implements Serializable {
     @SuperBuilder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class StoreInfo{
+    public static class StoreInfo {
         private String id;
         private String name;
         @JsonProperty(value = "area_code")
@@ -81,7 +66,7 @@ public abstract class WxPayBaseCreateOrderRequest implements Serializable {
     @SuperBuilder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class Detail{
+    public static class Detail {
         @JsonProperty(value = "cost_price")
         private int costPrice;
         @JsonProperty(value = "invoice_id")
@@ -94,15 +79,28 @@ public abstract class WxPayBaseCreateOrderRequest implements Serializable {
     @SuperBuilder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class GoodsDetail{
+    public static class GoodsDetail {
         @JsonProperty(value = "merchant_goods_id")
         private String MerchantGoodsId;
         @JsonProperty(value = "wechatpay_goods_id ")
-        private String wechatPayGoodsId ;
+        private String wechatPayGoodsId;
         @JsonProperty(value = "goods_name")
         private String goodsName;
         private int quantity;
         @JsonProperty(value = "unit_price")
         private int unitPrice;
+    }
+
+
+    public void fill(WxPayConfig config) {
+        if (StringUtils.isBlank(this.getAppId())) {
+            this.setAppId(config.getAppId());
+        }
+        if (StringUtils.isBlank(this.getMchId())) {
+            this.setMchId(config.getMchId());
+        }
+        if (StringUtils.isBlank(this.getNotifyUrl())) {
+            this.setNotifyUrl(config.getTransactionNotifyUrl());
+        }
     }
 }

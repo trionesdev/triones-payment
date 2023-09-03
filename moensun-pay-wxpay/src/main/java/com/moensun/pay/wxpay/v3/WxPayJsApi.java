@@ -12,8 +12,14 @@ import com.wechat.pay.java.service.payments.jsapi.model.PrepayWithRequestPayment
  * 支付JSAPI
  */
 public class WxPayJsApi extends WxPayBase {
-    private JsapiService jsapiService;
-    private JsapiServiceExtension jsapiServiceExtension;
+    private final JsapiService jsapiService;
+    private final JsapiServiceExtension jsapiServiceExtension;
+
+    public WxPayJsApi(WxPayConfig wxPayConfig) {
+        super(wxPayConfig);
+        this.jsapiService = new JsapiService.Builder().config(config).build();
+        this.jsapiServiceExtension = new JsapiServiceExtension.Builder().config(config).build();
+    }
 
     /**
      * 创建订单

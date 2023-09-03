@@ -10,13 +10,12 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Amount {
+    /**
+     * 总金额
+     */
     private Integer total;
+    /**
+     * 货币类型
+     */
     private String currency;
-
-    public com.wechat.pay.java.service.payments.h5.model.Amount toH5Amount(){
-        com.wechat.pay.java.service.payments.h5.model.Amount h5Amount = new com.wechat.pay.java.service.payments.h5.model.Amount();
-        h5Amount.setTotal(this.getTotal());
-        h5Amount.setCurrency(this.getCurrency());
-        return h5Amount;
-    }
 }

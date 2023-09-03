@@ -11,14 +11,15 @@ import java.util.Map;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class WxPayIntegrationConfig {
+public class WxPayConfig {
     private String appId;
     private String mchId;
     private String apiV3Key;
-    private byte[] privateKeyContent;
-    private byte[] privateCertContent;
+    private String privateKey;
+    private String privateCert;
     private String privateKeyPath;
     private String privateCertPath;
-    private String notifyUrl;
+    private String transactionNotifyUrl;
+    private String refundNotifyUrl;
     private Map<String,String> notifyUrls;
 }

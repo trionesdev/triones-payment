@@ -1,4 +1,4 @@
-package com.moensun.pay.wxpay.v3.model.h5;
+package com.moensun.pay.wxpay.v3.h5.model;
 
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
