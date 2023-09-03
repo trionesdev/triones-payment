@@ -1,6 +1,6 @@
-package com.moensun.pay.wxpay.v3.convert;
+package com.moensun.pay.wxpay.v3.payment.jsapi;
 
-import com.moensun.pay.wxpay.v3.model.jsapi.WxPayJsApiCreateOrderRequest;
+import com.moensun.pay.wxpay.v3.payment.jsapi.model.WxPayJsApiCreateOrderRequest;
 import com.wechat.pay.java.service.payments.jsapi.model.PrepayRequest;
 import org.mapstruct.Builder;
 import org.mapstruct.Mapper;

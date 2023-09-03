@@ -1,7 +1,7 @@
 package com.moensun.pay.wxpay.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.moensun.pay.wxpay.v3.WxPayConfig;
+import com.moensun.pay.wxpay.v3.payment.WxPayConfig;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

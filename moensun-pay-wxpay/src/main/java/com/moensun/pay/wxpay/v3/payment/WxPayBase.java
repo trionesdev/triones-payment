@@ -1,4 +1,4 @@
-package com.moensun.pay.wxpay.v3;
+package com.moensun.pay.wxpay.v3.payment;
 
 import com.moensun.pay.wxpay.v3.convert.WxPayConvertMapper;
 import com.moensun.pay.wxpay.v3.model.notify.WxPayNotifyRequest;

@@ -1,8 +1,10 @@
-package com.moensun.pay.wxpay.v3;
+package com.moensun.pay.wxpay.v3.payment.jsapi;
 
-import com.moensun.pay.wxpay.v3.model.jsapi.WxPayJsApiCreateOrderRequest;
-import com.moensun.pay.wxpay.v3.model.jsapi.WxPayJsApiCreateOrderResponse;
-import com.moensun.pay.wxpay.v3.model.jsapi.WxPayJsApiCreateOrderWithRequestPaymentResponse;
+import com.moensun.pay.wxpay.v3.payment.WxPayBase;
+import com.moensun.pay.wxpay.v3.payment.WxPayConfig;
+import com.moensun.pay.wxpay.v3.payment.jsapi.model.WxPayJsApiCreateOrderRequest;
+import com.moensun.pay.wxpay.v3.payment.jsapi.model.WxPayJsApiCreateOrderResponse;
+import com.moensun.pay.wxpay.v3.payment.jsapi.model.WxPayJsApiCreateOrderWithRequestPaymentResponse;
 import com.wechat.pay.java.service.payments.jsapi.JsapiService;
 import com.wechat.pay.java.service.payments.jsapi.JsapiServiceExtension;
 import com.wechat.pay.java.service.payments.jsapi.model.PrepayResponse;

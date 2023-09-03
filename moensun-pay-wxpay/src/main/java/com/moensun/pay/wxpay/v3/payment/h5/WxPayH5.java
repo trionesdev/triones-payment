@@ -1,8 +1,8 @@
-package com.moensun.pay.wxpay.v3.h5;
+package com.moensun.pay.wxpay.v3.payment.h5;
 
-import com.moensun.pay.wxpay.v3.WxPayBase;
-import com.moensun.pay.wxpay.v3.WxPayConfig;
-import com.moensun.pay.wxpay.v3.h5.model.*;
+import com.moensun.pay.wxpay.v3.payment.WxPayBase;
+import com.moensun.pay.wxpay.v3.payment.WxPayConfig;
+import com.moensun.pay.wxpay.v3.payment.h5.model.*;
 import com.wechat.pay.java.service.payments.h5.H5Service;
 import com.wechat.pay.java.service.payments.h5.model.PrepayResponse;
 import com.wechat.pay.java.service.payments.model.Transaction;

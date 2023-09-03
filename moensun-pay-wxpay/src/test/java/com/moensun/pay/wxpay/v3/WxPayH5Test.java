@@ -1,8 +1,9 @@
 package com.moensun.pay.wxpay.v3;
 
-import com.moensun.pay.wxpay.v3.h5.WxPayH5;
-import com.moensun.pay.wxpay.v3.h5.model.WxPayH5CreateOrderRequest;
-import com.moensun.pay.wxpay.v3.h5.model.WxPayH5CreateOrderResponse;
+import com.moensun.pay.wxpay.v3.payment.WxPayConfig;
+import com.moensun.pay.wxpay.v3.payment.h5.WxPayH5;
+import com.moensun.pay.wxpay.v3.payment.h5.model.WxPayH5CreateOrderRequest;
+import com.moensun.pay.wxpay.v3.payment.h5.model.WxPayH5CreateOrderResponse;
 import com.moensun.pay.wxpay.v3.model.Amount;
 import com.moensun.pay.wxpay.v3.model.SceneInfo;
 import org.apache.commons.lang3.RandomStringUtils;

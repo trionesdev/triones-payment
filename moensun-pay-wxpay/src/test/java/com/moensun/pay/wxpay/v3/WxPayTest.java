@@ -1,5 +1,7 @@
 package com.moensun.pay.wxpay.v3;
 
+import com.moensun.pay.wxpay.v3.payment.WxPayConfig;
+
 import java.util.Base64;
 
 public class WxPayTest {

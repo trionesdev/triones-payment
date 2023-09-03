@@ -1,8 +1,8 @@
-package com.moensun.pay.wxpay.v3.model.notify;
+package com.moensun.pay.wxpay.v3.payment.h5.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.moensun.pay.wxpay.v3.nativepay.WxPayNativeConvertMapper;
-import com.wechat.pay.java.service.payments.nativepay.model.QueryOrderByOutTradeNoRequest;
+import com.moensun.pay.wxpay.v3.payment.h5.WxPayH5ConvertMapper;
+import com.wechat.pay.java.service.payments.h5.model.QueryOrderByOutTradeNoRequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,12 +14,13 @@ import java.io.Serializable;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WxPayNativeQueryOrderByOutTradeNoRequest implements Serializable {
+public class WxPayH5QueryOrderByOutTradeNoRequest implements Serializable {
     @JsonProperty(value = "out_trade_no")
     private String outTradeNo;
-    private String mchid;
+    @JsonProperty(value = "mchId")
+    private String mchId;
 
     public QueryOrderByOutTradeNoRequest toSdkRequest() {
-        return WxPayNativeConvertMapper.INSTANCE.from(this);
+        return WxPayH5ConvertMapper.INSTANCE.from(this);
     }
 }

@@ -1,6 +1,6 @@
-package com.moensun.pay.wxpay.v3.h5;
+package com.moensun.pay.wxpay.v3.payment.h5;
 
-import com.moensun.pay.wxpay.v3.h5.model.*;
+import com.moensun.pay.wxpay.v3.payment.h5.model.*;
 import com.wechat.pay.java.service.payments.h5.model.CloseOrderRequest;
 import com.wechat.pay.java.service.payments.h5.model.PrepayRequest;
 import com.wechat.pay.java.service.payments.h5.model.QueryOrderByIdRequest;
@@ -16,19 +16,31 @@ import org.mapstruct.factory.Mappers;
 public interface WxPayH5ConvertMapper {
     WxPayH5ConvertMapper INSTANCE = Mappers.getMapper(WxPayH5ConvertMapper.class);
 
-    @Mappings(
-            value = {
-                    @Mapping(source = "appId", target = "appid"),
-                    @Mapping(source = "mchId", target = "mchid")
-            }
-    )
+    @Mappings(value = {
+            @Mapping(source = "appId", target = "appid"),
+            @Mapping(source = "mchId", target = "mchid")
+    })
     PrepayRequest from(WxPayH5CreateOrderRequest args);
 
+    @Mappings(value = {
+            @Mapping(source = "mchId", target = "mchid")
+    })
     QueryOrderByIdRequest from(WxPayH5QueryOrderByIdRequest args);
 
+    @Mappings(value = {
+            @Mapping(source = "mchId", target = "mchid")
+    })
     QueryOrderByOutTradeNoRequest from(WxPayH5QueryOrderByOutTradeNoRequest args);
 
+    @Mappings(value = {
+            @Mapping(source = "appid", target = "appId"),
+            @Mapping(source = "mchid", target = "mchId"),
+            @Mapping(source = "payer.openid", target = "payer.openId"),
+    })
     WxPayH5QueryOrderResponse from(Transaction args);
 
+    @Mappings(value = {
+            @Mapping(source = "mchId", target = "mchid")
+    })
     CloseOrderRequest from(WxPayH5CloseOrderRequest args);
 }

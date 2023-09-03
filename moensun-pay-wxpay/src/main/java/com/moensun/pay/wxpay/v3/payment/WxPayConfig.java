@@ -1,4 +1,4 @@
-package com.moensun.pay.wxpay.v3;
+package com.moensun.pay.wxpay.v3.payment;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,5 +21,4 @@ public class WxPayConfig {
     private String privateCertPath;
     private String transactionNotifyUrl;
     private String refundNotifyUrl;
-    private Map<String,String> notifyUrls;
 }

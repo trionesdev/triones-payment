@@ -1,9 +1,10 @@
 package com.moensun.pay.wxpay.v3;
 
 import com.moensun.pay.wxpay.v3.model.Amount;
-import com.moensun.pay.wxpay.v3.nativepay.WxPayNative;
-import com.moensun.pay.wxpay.v3.nativepay.model.WxPayNativeCreateOrderRequest;
-import com.moensun.pay.wxpay.v3.nativepay.model.WxPayNativeCreateOrderResponse;
+import com.moensun.pay.wxpay.v3.payment.WxPayConfig;
+import com.moensun.pay.wxpay.v3.payment.nativepay.WxPayNative;
+import com.moensun.pay.wxpay.v3.payment.nativepay.model.WxPayNativeCreateOrderRequest;
+import com.moensun.pay.wxpay.v3.payment.nativepay.model.WxPayNativeCreateOrderResponse;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.moensun.pay.wxpay.v3.model.jsapi;
+package com.moensun.pay.wxpay.v3.payment.jsapi.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
