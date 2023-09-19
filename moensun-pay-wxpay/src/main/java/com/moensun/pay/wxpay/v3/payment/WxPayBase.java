@@ -34,8 +34,11 @@ public abstract class WxPayBase {
         RSAAutoCertificateConfig.Builder builder = new RSAAutoCertificateConfig
                 .Builder()
                 .merchantId(wxPayConfig.getMchId())
-                .merchantSerialNumber(getMerchantSerialNumber(wxPayConfig.getPrivateCertPath(), wxPayConfig.getPrivateCert()))
+                .merchantSerialNumber(wxPayConfig.getMerchantSerialNo())
                 .apiV3Key(wxPayConfig.getApiV3Key());
+        if (StringUtils.isBlank(wxPayConfig.getMerchantSerialNo())) {
+            builder.merchantSerialNumber(getMerchantSerialNumber(wxPayConfig.getPrivateCertPath(), wxPayConfig.getPrivateCert()));
+        }
         if (StringUtils.isNoneBlank(wxPayConfig.getPrivateKey())) {
             builder.privateKey(wxPayConfig.getPrivateKey());
         } else {

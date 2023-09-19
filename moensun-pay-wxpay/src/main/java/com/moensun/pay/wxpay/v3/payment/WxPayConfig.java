@@ -15,6 +15,7 @@ public class WxPayConfig {
     private String appId;
     private String mchId;
     private String apiV3Key;
+    private String merchantSerialNo;
     private String privateKey;
     private String privateCert;
     private String privateKeyPath;
