@@ -3,6 +3,7 @@ package com.moensun.pay.wxpay.v3.payment.jsapi.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
@@ -11,6 +12,7 @@ import java.io.Serializable;
  * jsapi调起支付需要的参数
  */
 @Data
+@Accessors(chain = true)
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
