@@ -1,5 +1,6 @@
 package com.moensun.pay.wxpay.v3.payment.app.model;
 
+import com.moensun.pay.wxpay.v3.model.Payer;
 import com.moensun.pay.wxpay.v3.model.WxPayBaseCreateOrderRequest;
 import com.moensun.pay.wxpay.v3.payment.WxPayConfig;
 import com.moensun.pay.wxpay.v3.payment.app.WxPayAppConvertMapper;
@@ -14,6 +15,7 @@ import lombok.experimental.SuperBuilder;
 @Accessors(chain = true)
 @SuperBuilder
 public class WxPayAppCreateOrderRequest extends WxPayBaseCreateOrderRequest {
+    private Payer payer;
     public PrepayRequest toSdkRequest(WxPayConfig config) {
         this.fill(config);
         return WxPayAppConvertMapper.INSTANCE.from(this);

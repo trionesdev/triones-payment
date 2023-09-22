@@ -16,7 +16,7 @@ import java.io.Serializable;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class WxPayBaseCreateOrderRequest implements Serializable {
+public  class WxPayBaseCreateOrderRequest implements Serializable {
     @JsonProperty(value = "appid")
     private String appId;
     @JsonProperty(value = "mchid")
