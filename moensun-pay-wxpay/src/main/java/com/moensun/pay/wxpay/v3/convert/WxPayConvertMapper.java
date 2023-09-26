@@ -10,7 +10,7 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(builder = @Builder(disableBuilder = true))
 public interface WxPayConvertMapper {
-    public WxPayConvertMapper INSTANCE = Mappers.getMapper(WxPayConvertMapper.class);
+    WxPayConvertMapper INSTANCE = Mappers.getMapper(WxPayConvertMapper.class);
 
     WxPayTransactionNotifyResponse from(Transaction args);
 
