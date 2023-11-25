@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.moensun.pay</groupId>
-    <artifactId>moensun-pay</artifactId>
+    <artifactId>triones-pay</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>MS:Pay</name>
+    <name>Triones:Pay</name>
     <modules>
-        <module>moensun-pay-alipay</module>
-        <module>moensun-pay-wxpay</module>
-        <module>moensun-pay-commons</module>
+        <module>triones-pay-alipay</module>
+        <module>triones-pay-wxpay</module>
+        <module>triones-pay-commons</module>
     </modules>
 
     <properties>
@@ -61,17 +61,17 @@
             </dependency>
             <dependency>
                 <groupId>com.moensun.pay</groupId>
-                <artifactId>moensun-pay-commons</artifactId>
+                <artifactId>triones-pay-commons</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.moensun.pay</groupId>
-                <artifactId>moensun-pay-alipay</artifactId>
+                <artifactId>triones-pay-alipay</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.moensun.pay</groupId>
-                <artifactId>moensun-pay-wxpay</artifactId>
+                <artifactId>triones-pay-wxpay</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
