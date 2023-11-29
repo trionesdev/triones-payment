@@ -12,13 +12,14 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SceneInfo {
-    @JsonProperty(value = "payer_client_ip")
-    private String payerClientIp;
-    @JsonProperty(value = "device_id")
-    private String deviceId;
-    @JsonProperty(value = "store_info")
-    private StoreInfo storeInfo;
-    @JsonProperty(value = "h5_info")
-    private H5Info h5Info;
+public class H5Info {
+    private String type;
+    @JsonProperty(value = "app_name")
+    private String appName;
+    @JsonProperty(value = "app_url")
+    private String appUrl;
+    @JsonProperty(value = "bundle_id")
+    private String bundleId;
+    @JsonProperty(value = "package_name")
+    private String packageName;
 }
