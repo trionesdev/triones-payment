@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.trionesdev.pay</groupId>
-    <artifactId>triones-pay</artifactId>
+    <groupId>com.trionesdev.payment</groupId>
+    <artifactId>triones-payment</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>Triones:Pay</name>
+    <name>Triones:Payment</name>
     <modules>
-        <module>triones-pay-alipay</module>
-        <module>triones-pay-wxpay</module>
-        <module>triones-pay-commons</module>
+        <module>triones-payment-alipay</module>
+        <module>triones-payment-wxpay</module>
+        <module>triones-payment-commons</module>
     </modules>
 
     <properties>
@@ -67,18 +67,18 @@
                 <version>1.5.3.Final</version>
             </dependency>
             <dependency>
-                <groupId>com.trionesdev.pay</groupId>
-                <artifactId>triones-pay-commons</artifactId>
+                <groupId>com.trionesdev.payment</groupId>
+                <artifactId>triones-payment-commons</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.trionesdev.pay</groupId>
-                <artifactId>triones-pay-alipay</artifactId>
+                <groupId>com.trionesdev.payment</groupId>
+                <artifactId>triones-payment-alipay</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.trionesdev.pay</groupId>
-                <artifactId>triones-pay-wxpay</artifactId>
+                <groupId>com.trionesdev.payment</groupId>
+                <artifactId>triones-payment-wxpay</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
