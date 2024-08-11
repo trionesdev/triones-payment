@@ -20,22 +20,22 @@ public class WxPay implements WxPayTemplate {
     }
 
     @Override
-    public WxPayH5 getH5Instance() {
+    public WxPayH5 getH5() {
         return this.h5Instance;
     }
 
     @Override
-    public WxPayJsApi getJsApiInstance() {
+    public WxPayJsApi getJsApi() {
         return this.jsApiInstance;
     }
 
     @Override
-    public WxPayNative getNativeInstance() {
+    public WxPayNative getNative() {
         return this.nativeInstance;
     }
 
     @Override
-    public WxPayApp getAppInstance() {
+    public WxPayApp getApp() {
         return this.appInstance;
     }
 }

@@ -7,11 +7,11 @@ import com.trionesdev.payment.wxpay.v3.payment.nativepay.WxPayNative;
 
 public interface WxPayTemplate {
 
-    WxPayH5 getH5Instance();
+    WxPayH5 getH5();
 
-    WxPayJsApi getJsApiInstance();
+    WxPayJsApi getJsApi();
 
-    WxPayNative getNativeInstance();
+    WxPayNative getNative();
 
-    WxPayApp getAppInstance();
+    WxPayApp getApp();
 }
