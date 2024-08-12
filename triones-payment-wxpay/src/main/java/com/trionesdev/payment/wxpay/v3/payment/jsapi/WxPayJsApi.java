@@ -9,6 +9,7 @@ import com.wechat.pay.java.service.payments.jsapi.JsapiService;
 import com.wechat.pay.java.service.payments.jsapi.JsapiServiceExtension;
 import com.wechat.pay.java.service.payments.jsapi.model.PrepayResponse;
 import com.wechat.pay.java.service.payments.jsapi.model.PrepayWithRequestPaymentResponse;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * 支付JSAPI
@@ -31,6 +32,15 @@ public class WxPayJsApi extends WxPayBase {
      * @link <a href="https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_1.shtml">...</a>
      */
     public WxPayJsApiCreateOrderResponse createOrder(WxPayJsApiCreateOrderRequest request) {
+        if (StringUtils.isBlank(request.getAppId())) {
+            request.setAppId(wxPayConfig.getAppId());
+        }
+        if (StringUtils.isBlank(request.getMchId())) {
+            request.setMchId(wxPayConfig.getMchId());
+        }
+        if (StringUtils.isBlank(request.getNotifyUrl())) {
+            request.setNotifyUrl(wxPayConfig.getTransactionNotifyUrl());
+        }
         PrepayResponse response = jsapiService.prepay(request.toPrepayRequest());
         return WxPayJsApiCreateOrderResponse.builder().prepayId(response.getPrepayId()).build();
     }

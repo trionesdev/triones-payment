@@ -20,7 +20,7 @@
         <dependency>
             <groupId>com.github.wechatpay-apiv3</groupId>
             <artifactId>wechatpay-java</artifactId>
-            <version>0.2.11</version>
+            <version>0.2.12</version>
         </dependency>
         <dependency>
             <groupId>com.trionesdev.payment</groupId>

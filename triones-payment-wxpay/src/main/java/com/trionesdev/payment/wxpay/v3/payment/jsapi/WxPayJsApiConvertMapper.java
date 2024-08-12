@@ -14,7 +14,8 @@ public interface WxPayJsApiConvertMapper {
 
     @Mappings(value = {
             @Mapping(source = "appId", target = "appid"),
-            @Mapping(source = "mchId", target = "mchid")
+            @Mapping(source = "mchId", target = "mchid"),
+            @Mapping(source = "payer.openId",target = "payer.openid")
     })
     PrepayRequest from(WxPayJsApiCreateOrderRequest args);
 }
