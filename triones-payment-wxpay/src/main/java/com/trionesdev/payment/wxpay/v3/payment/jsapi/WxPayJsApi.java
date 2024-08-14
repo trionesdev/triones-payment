@@ -32,16 +32,7 @@ public class WxPayJsApi extends WxPayBase {
      * @link <a href="https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_1.shtml">...</a>
      */
     public WxPayJsApiCreateOrderResponse createOrder(WxPayJsApiCreateOrderRequest request) {
-        if (StringUtils.isBlank(request.getAppId())) {
-            request.setAppId(wxPayConfig.getAppId());
-        }
-        if (StringUtils.isBlank(request.getMchId())) {
-            request.setMchId(wxPayConfig.getMchId());
-        }
-        if (StringUtils.isBlank(request.getNotifyUrl())) {
-            request.setNotifyUrl(wxPayConfig.getTransactionNotifyUrl());
-        }
-        PrepayResponse response = jsapiService.prepay(request.toPrepayRequest());
+        PrepayResponse response = jsapiService.prepay(request.toPrepayRequest(wxPayConfig));
         return WxPayJsApiCreateOrderResponse.builder().prepayId(response.getPrepayId()).build();
     }
 
@@ -53,7 +44,7 @@ public class WxPayJsApi extends WxPayBase {
      * @link <a href="https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_4.shtml">...</a>
      */
     public WxPayJsApiCreateOrderWithRequestPaymentResponse createOrderWithRequestPayment(WxPayJsApiCreateOrderRequest request) {
-        PrepayWithRequestPaymentResponse response = jsapiServiceExtension.prepayWithRequestPayment(request.toPrepayRequest());
+        PrepayWithRequestPaymentResponse response = jsapiServiceExtension.prepayWithRequestPayment(request.toPrepayRequest(wxPayConfig));
         return WxPayJsApiCreateOrderWithRequestPaymentResponse.builder()
                 .appId(response.getAppId())
                 .timeStamp(response.getTimeStamp())

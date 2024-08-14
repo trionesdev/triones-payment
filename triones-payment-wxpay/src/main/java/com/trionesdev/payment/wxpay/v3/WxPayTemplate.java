@@ -7,6 +7,10 @@ import com.trionesdev.payment.wxpay.v3.payment.nativepay.WxPayNative;
 
 public interface WxPayTemplate {
 
+    String transactionNotifyUrl(String code);
+
+    String refundNotifyUrl(String code);
+
     WxPayH5 getH5();
 
     WxPayJsApi getJsApi();

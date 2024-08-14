@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.Map;
+
 @Data
 @SuperBuilder
 @NoArgsConstructor
@@ -20,4 +22,6 @@ public class WxPayConfig {
     private String privateCertPath;
     private String transactionNotifyUrl;
     private String refundNotifyUrl;
+    private Map<String,String> transactionNotifyUrls;
+    private Map<String,String> refundNotifyUrls;
 }
