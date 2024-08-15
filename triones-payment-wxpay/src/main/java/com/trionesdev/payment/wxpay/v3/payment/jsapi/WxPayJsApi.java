@@ -49,7 +49,7 @@ public class WxPayJsApi extends WxPayBase {
                 .appId(response.getAppId())
                 .timeStamp(response.getTimeStamp())
                 .nonceStr(response.getNonceStr())
-                .packageStr(response.getNonceStr())
+                .packageStr(response.getPackageVal())
                 .paySign(response.getPaySign())
                 .signType("RSA")
                 .build();
