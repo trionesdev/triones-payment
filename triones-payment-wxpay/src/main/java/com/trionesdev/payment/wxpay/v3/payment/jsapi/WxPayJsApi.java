@@ -51,6 +51,7 @@ public class WxPayJsApi extends WxPayBase {
                 .nonceStr(response.getNonceStr())
                 .packageStr(response.getNonceStr())
                 .paySign(response.getPaySign())
+                .signType("RSA")
                 .build();
     }
 

@@ -22,4 +22,5 @@ public class WxPayJsApiCreateOrderWithRequestPaymentResponse implements Serializ
     private String nonceStr;
     private String packageStr;
     private String paySign;
+    private String signType;
 }
