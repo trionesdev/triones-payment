@@ -1,7 +1,7 @@
 package com.trionesdev.payment.wxpay.v3.payment.nativepay.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.trionesdev.payment.wxpay.v3.payment.nativepay.WxPayNativeConvertMapper;
+import com.trionesdev.payment.wxpay.v3.payment.nativepay.WxPayNativeConvert;
 import com.wechat.pay.java.service.payments.nativepay.model.QueryOrderByIdRequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +21,6 @@ public class WxPayNativeQueryOrderByIdRequest implements Serializable {
     private String mchId;
 
     public QueryOrderByIdRequest toSdkRequest() {
-        return WxPayNativeConvertMapper.INSTANCE.from(this);
+        return WxPayNativeConvert.INSTANCE.from(this);
     }
 }

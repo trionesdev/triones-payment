@@ -1,5 +1,8 @@
 package com.trionesdev.payment.wxpay.v3;
 
+import com.trionesdev.payment.wxpay.v3.model.notify.WxPayNotifyRequest;
+import com.trionesdev.payment.wxpay.v3.model.notify.WxPayRefoundNotifyResponse;
+import com.trionesdev.payment.wxpay.v3.model.notify.WxPayTransactionNotifyResponse;
 import com.trionesdev.payment.wxpay.v3.payment.app.WxPayApp;
 import com.trionesdev.payment.wxpay.v3.payment.h5.WxPayH5;
 import com.trionesdev.payment.wxpay.v3.payment.jsapi.WxPayJsApi;
@@ -18,4 +21,8 @@ public interface WxPayTemplate {
     WxPayNative getNative();
 
     WxPayApp getApp();
+
+    WxPayTransactionNotifyResponse transactionNotify(WxPayNotifyRequest wxPayNotifyRequest);
+
+    WxPayRefoundNotifyResponse refundNotify(WxPayNotifyRequest wxPayNotifyRequest);
 }

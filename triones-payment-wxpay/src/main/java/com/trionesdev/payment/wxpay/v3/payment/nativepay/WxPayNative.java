@@ -39,12 +39,12 @@ public class WxPayNative extends WxPayBase {
      */
     public WxPayNativeQueryOrderResponse queryOrderById(WxPayNativeQueryOrderByIdRequest request) {
         Transaction transaction = nativePayService.queryOrderById(request.toSdkRequest());
-        return WxPayNativeConvertMapper.INSTANCE.from(transaction);
+        return WxPayNativeConvert.INSTANCE.from(transaction);
     }
 
     public WxPayNativeQueryOrderResponse queryOrderByOutTradeNo(WxPayNativeQueryOrderByOutTradeNoRequest request) {
         Transaction transaction = nativePayService.queryOrderByOutTradeNo(request.toSdkRequest());
-        return WxPayNativeConvertMapper.INSTANCE.from(transaction);
+        return WxPayNativeConvert.INSTANCE.from(transaction);
     }
 
     public void closeOrder(WxPayNativeCloseOrderRequest request) {

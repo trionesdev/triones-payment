@@ -3,7 +3,7 @@ package com.trionesdev.payment.wxpay.v3.payment.jsapi.model;
 import com.trionesdev.payment.wxpay.v3.model.Payer;
 import com.trionesdev.payment.wxpay.v3.model.WxPayBaseCreateOrderRequest;
 import com.trionesdev.payment.wxpay.v3.payment.WxPayConfig;
-import com.trionesdev.payment.wxpay.v3.payment.jsapi.WxPayJsApiConvertMapper;
+import com.trionesdev.payment.wxpay.v3.payment.jsapi.WxPayJsApiConvert;
 import com.wechat.pay.java.service.payments.jsapi.model.PrepayRequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,7 +24,7 @@ public class WxPayJsApiCreateOrderRequest extends WxPayBaseCreateOrderRequest {
 
     public PrepayRequest toPrepayRequest(WxPayConfig config) {
         this.fill(config);
-        return WxPayJsApiConvertMapper.INSTANCE.from(this);
+        return WxPayJsApiConvert.INSTANCE.from(this);
     }
 
 }

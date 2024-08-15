@@ -13,8 +13,8 @@ import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(builder = @Builder(disableBuilder = true))
-public interface WxPayH5ConvertMapper {
-    WxPayH5ConvertMapper INSTANCE = Mappers.getMapper(WxPayH5ConvertMapper.class);
+public interface WxPayH5Convert {
+    WxPayH5Convert INSTANCE = Mappers.getMapper(WxPayH5Convert.class);
 
     @Mappings(value = {
             @Mapping(source = "appId", target = "appid"),

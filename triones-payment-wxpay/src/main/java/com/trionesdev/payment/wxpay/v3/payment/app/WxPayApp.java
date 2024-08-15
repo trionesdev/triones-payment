@@ -1,13 +1,13 @@
 package com.trionesdev.payment.wxpay.v3.payment.app;
 
-import com.trionesdev.payment.wxpay.v3.payment.WxPayBase;
 import com.trionesdev.payment.wxpay.v3.payment.WxPayConfig;
+import com.trionesdev.payment.wxpay.v3.payment.WxPayNotify;
 import com.trionesdev.payment.wxpay.v3.payment.app.model.WxPayAppCreateOrderRequest;
 import com.trionesdev.payment.wxpay.v3.payment.app.model.WxPayAppCreateOrderResponse;
 import com.wechat.pay.java.service.payments.app.AppService;
 import com.wechat.pay.java.service.payments.app.model.PrepayResponse;
 
-public class WxPayApp extends WxPayBase {
+public class WxPayApp extends WxPayNotify {
     private final AppService appService;
 
     public WxPayApp(WxPayConfig wxPayConfig) {
@@ -22,6 +22,6 @@ public class WxPayApp extends WxPayBase {
      */
     public WxPayAppCreateOrderResponse createOrder(WxPayAppCreateOrderRequest request) {
         PrepayResponse response = appService.prepay(request.toSdkRequest(wxPayConfig));
-        return WxPayAppConvertMapper.INSTANCE.from(response);
+        return WxPayAppConvert.INSTANCE.from(response);
     }
 }

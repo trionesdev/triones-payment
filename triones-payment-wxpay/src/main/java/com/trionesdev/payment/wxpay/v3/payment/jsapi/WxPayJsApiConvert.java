@@ -9,8 +9,8 @@ import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(builder = @Builder(disableBuilder = true))
-public interface WxPayJsApiConvertMapper {
-    WxPayJsApiConvertMapper INSTANCE = Mappers.getMapper(WxPayJsApiConvertMapper.class);
+public interface WxPayJsApiConvert {
+    WxPayJsApiConvert INSTANCE = Mappers.getMapper(WxPayJsApiConvert.class);
 
     @Mappings(value = {
             @Mapping(source = "appId", target = "appid"),

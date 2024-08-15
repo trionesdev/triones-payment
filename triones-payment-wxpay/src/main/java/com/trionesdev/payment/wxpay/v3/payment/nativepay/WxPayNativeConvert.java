@@ -17,8 +17,8 @@ import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(builder = @Builder(disableBuilder = true))
-public interface WxPayNativeConvertMapper {
-    WxPayNativeConvertMapper INSTANCE = Mappers.getMapper(WxPayNativeConvertMapper.class);
+public interface WxPayNativeConvert {
+    WxPayNativeConvert INSTANCE = Mappers.getMapper(WxPayNativeConvert.class);
 
     @Mappings(value = {
             @Mapping(source = "appId", target = "appid"),

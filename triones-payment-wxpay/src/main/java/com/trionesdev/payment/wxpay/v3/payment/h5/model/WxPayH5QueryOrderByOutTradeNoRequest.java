@@ -1,7 +1,7 @@
 package com.trionesdev.payment.wxpay.v3.payment.h5.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.trionesdev.payment.wxpay.v3.payment.h5.WxPayH5ConvertMapper;
+import com.trionesdev.payment.wxpay.v3.payment.h5.WxPayH5Convert;
 import com.wechat.pay.java.service.payments.h5.model.QueryOrderByOutTradeNoRequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +21,6 @@ public class WxPayH5QueryOrderByOutTradeNoRequest implements Serializable {
     private String mchId;
 
     public QueryOrderByOutTradeNoRequest toSdkRequest() {
-        return WxPayH5ConvertMapper.INSTANCE.from(this);
+        return WxPayH5Convert.INSTANCE.from(this);
     }
 }

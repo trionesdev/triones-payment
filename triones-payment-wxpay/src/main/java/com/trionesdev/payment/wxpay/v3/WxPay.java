@@ -1,12 +1,15 @@
 package com.trionesdev.payment.wxpay.v3;
 
+import com.trionesdev.payment.wxpay.v3.model.notify.WxPayNotifyRequest;
+import com.trionesdev.payment.wxpay.v3.model.notify.WxPayRefoundNotifyResponse;
+import com.trionesdev.payment.wxpay.v3.model.notify.WxPayTransactionNotifyResponse;
 import com.trionesdev.payment.wxpay.v3.payment.WxPayConfig;
+import com.trionesdev.payment.wxpay.v3.payment.WxPayNotify;
 import com.trionesdev.payment.wxpay.v3.payment.app.WxPayApp;
 import com.trionesdev.payment.wxpay.v3.payment.h5.WxPayH5;
 import com.trionesdev.payment.wxpay.v3.payment.jsapi.WxPayJsApi;
 import com.trionesdev.payment.wxpay.v3.payment.nativepay.WxPayNative;
 
-import java.util.Map;
 import java.util.Optional;
 
 public class WxPay implements WxPayTemplate {
@@ -14,6 +17,7 @@ public class WxPay implements WxPayTemplate {
     private final WxPayJsApi jsApiInstance;
     private final WxPayNative nativeInstance;
     private final WxPayApp appInstance;
+    private final WxPayNotify wxPayNotify;
     private final WxPayConfig wxPayConfig;
 
     public WxPay(WxPayConfig wxPayConfig) {
@@ -22,8 +26,8 @@ public class WxPay implements WxPayTemplate {
         this.jsApiInstance = new WxPayJsApi(wxPayConfig);
         this.nativeInstance = new WxPayNative(wxPayConfig);
         this.appInstance = new WxPayApp(wxPayConfig);
+        this.wxPayNotify = new WxPayNotify(wxPayConfig);
     }
-
 
     @Override
     public String transactionNotifyUrl(String code) {
@@ -54,4 +58,24 @@ public class WxPay implements WxPayTemplate {
     public WxPayApp getApp() {
         return this.appInstance;
     }
+
+    /**
+     * 交易成功回调通知
+     *
+     * @param wxPayNotifyRequest
+     */
+    public WxPayTransactionNotifyResponse transactionNotify(WxPayNotifyRequest wxPayNotifyRequest) {
+        return wxPayNotify.transactionNotify(wxPayNotifyRequest);
+    }
+
+    /**
+     * 退款成功回调
+     *
+     * @param wxPayNotifyRequest
+     * @return
+     */
+    public WxPayRefoundNotifyResponse refundNotify(WxPayNotifyRequest wxPayNotifyRequest) {
+        return wxPayNotify.refundNotify(wxPayNotifyRequest);
+    }
+
 }

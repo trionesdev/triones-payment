@@ -1,6 +1,6 @@
 package com.trionesdev.payment.wxpay.v3.payment;
 
-import com.trionesdev.payment.wxpay.v3.convert.WxPayConvertMapper;
+import com.trionesdev.payment.wxpay.v3.convert.WxPayConvert;
 import com.trionesdev.payment.wxpay.v3.model.notify.WxPayNotifyRequest;
 import com.trionesdev.payment.wxpay.v3.model.notify.WxPayRefoundNotifyResponse;
 import com.trionesdev.payment.wxpay.v3.model.notify.WxPayTransactionNotifyResponse;
@@ -22,7 +22,7 @@ public abstract class WxPayBase {
     protected final WxPayConfig wxPayConfig;
     protected final Config config;
 
-    private final NotificationParser notificationParser;
+    protected final NotificationParser notificationParser;
 
     public WxPayBase(WxPayConfig wxPayConfig) {
         this.wxPayConfig = wxPayConfig;
@@ -64,7 +64,7 @@ public abstract class WxPayBase {
      */
     public WxPayTransactionNotifyResponse transactionNotify(WxPayNotifyRequest wxPayNotifyRequest) {
         Transaction transaction = notificationParser.parse(wxPayNotifyRequest.toRequestParam(), Transaction.class);
-        return WxPayConvertMapper.INSTANCE.from(transaction);
+        return WxPayConvert.INSTANCE.from(transaction);
     }
 
     /**
@@ -75,7 +75,7 @@ public abstract class WxPayBase {
      */
     public WxPayRefoundNotifyResponse refundNotify(WxPayNotifyRequest wxPayNotifyRequest) {
         RefundNotification refundNotification = notificationParser.parse(wxPayNotifyRequest.toRequestParam(), RefundNotification.class);
-        return WxPayConvertMapper.INSTANCE.from(refundNotification);
+        return WxPayConvert.INSTANCE.from(refundNotification);
     }
 
 }

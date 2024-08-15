@@ -38,7 +38,7 @@ public class WxPayH5 extends WxPayBase {
      */
     public WxPayH5QueryOrderResponse queryOrderById(WxPayH5QueryOrderByIdRequest request) {
         Transaction transaction = h5Service.queryOrderById(request.toSdkRequest());
-        return WxPayH5ConvertMapper.INSTANCE.from(transaction);
+        return WxPayH5Convert.INSTANCE.from(transaction);
     }
 
     /**
@@ -49,7 +49,7 @@ public class WxPayH5 extends WxPayBase {
      */
     public WxPayH5QueryOrderResponse queryOrderByOutTradeNo(WxPayH5QueryOrderByOutTradeNoRequest request) {
         Transaction transaction = h5Service.queryOrderByOutTradeNo(request.toSdkRequest());
-        return WxPayH5ConvertMapper.INSTANCE.from(transaction);
+        return WxPayH5Convert.INSTANCE.from(transaction);
     }
 
     /**
