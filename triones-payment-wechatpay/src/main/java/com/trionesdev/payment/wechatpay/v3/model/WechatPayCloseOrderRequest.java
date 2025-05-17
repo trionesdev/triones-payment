@@ -5,16 +5,15 @@ import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 import lombok.experimental.SuperBuilder;
 
 @Data
-@Accessors(chain = true)
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Payer {
-    @JsonProperty(value = "openid")
-    @SerializedName(value = "openid")
-    private String openId;
+public class WechatPayCloseOrderRequest {
+    private String outTradeNo;
+    @JsonProperty(value = "mchid")
+    @SerializedName(value = "mchid")
+    private String mchId;
 }

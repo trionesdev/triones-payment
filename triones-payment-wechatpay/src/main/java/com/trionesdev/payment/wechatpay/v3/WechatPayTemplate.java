@@ -1,5 +1,6 @@
 package com.trionesdev.payment.wechatpay.v3;
 
+import com.trionesdev.payment.wechatpay.v3.model.WechatPayCloseOrderRequest;
 import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayNotifyRequest;
 import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayRefoundNotifyResponse;
 import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayTransactionNotifyResponse;
@@ -21,6 +22,9 @@ public interface WechatPayTemplate {
     WechatPayNative getNative();
 
     WechatPayApp getApp();
+
+
+    void closeOrder(WechatPayCloseOrderRequest request);
 
     WechatPayTransactionNotifyResponse transactionNotify(WechatPayNotifyRequest wxPayNotifyRequest);
 

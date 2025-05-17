@@ -1,6 +1,9 @@
 package com.trionesdev.payment.wechatpay.v3.model.notify;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
+import com.trionesdev.payment.wechatpay.v3.model.Payer;
+import com.trionesdev.payment.wechatpay.v3.model.TransactionAmount;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,47 +20,34 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class WechatPayRefoundNotifyResponse implements Serializable {
     @JsonProperty(value = "mchid")
+    @SerializedName(value = "mchid")
     private String mchId;
     @JsonProperty(value = "appid")
+    @SerializedName(value = "appid")
     private String appId;
     @JsonProperty(value = "out_trade_no")
+    @SerializedName(value = "out_trade_no")
     private String outTradeNo;
     @JsonProperty(value = "transaction_id")
+    @SerializedName(value = "transaction_id")
     private String transactionId;
     @JsonProperty(value = "trade_type")
+    @SerializedName(value = "trade_type")
     private String tradeType;
     @JsonProperty(value = "trade_state")
+    @SerializedName(value = "trade_state")
     private String tradeState;
     @JsonProperty(value = "trade_state_desc")
+    @SerializedName(value = "trade_state_desc")
     private String tradeStateDesc;
     @JsonProperty(value = "bank_type")
+    @SerializedName(value = "bank_type")
     private String bankType;
     private String attach;
     @JsonProperty(value = "success_time")
+    @SerializedName(value = "success_time")
     private String successTime;
     private Payer payer;
-    private Amount amount;
+    private TransactionAmount amount;
 
-
-    @Data
-    @SuperBuilder
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class Payer{
-        @JsonProperty(value = "openid")
-        private String openId;
-    }
-
-    @Data
-    @SuperBuilder
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class Amount{
-        private int total;
-        @JsonProperty(value = "payer_total")
-        private int payerTotal;
-        private String currency;
-        @JsonProperty(value = "payer_currency")
-        private String payerCurrency;
-    }
 }

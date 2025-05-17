@@ -13,8 +13,13 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Payer {
-    @JsonProperty(value = "openid")
-    @SerializedName(value = "openid")
-    private String openId;
+public class TransactionAmount {
+    private int total;
+    @JsonProperty(value = "payer_total")
+    @SerializedName(value = "payer_total")
+    private int payerTotal;
+    private String currency;
+    @JsonProperty(value = "payer_currency")
+    @SerializedName(value = "payer_currency")
+    private String payerCurrency;
 }

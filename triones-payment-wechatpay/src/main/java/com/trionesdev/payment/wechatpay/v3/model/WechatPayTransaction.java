@@ -1,6 +1,9 @@
 package com.trionesdev.payment.wechatpay.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
+import com.trionesdev.payment.wechatpay.v3.enums.TradeState;
+import com.trionesdev.payment.wechatpay.v3.enums.TradeType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,67 +20,33 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class WechatPayTransaction implements Serializable {
     @JsonProperty(value = "mchid")
+    @SerializedName("mchid")
     private String mchId;
     @JsonProperty(value = "appid")
+    @SerializedName("appid")
     private String appId;
     @JsonProperty(value = "out_trade_no")
+    @SerializedName("out_trade_no")
     private String outTradeNo;
     @JsonProperty(value = "transaction_id")
+    @SerializedName(value = "transaction_id")
     private String transactionId;
     @JsonProperty(value = "trade_type")
-    private TradeTypeEnum tradeType;
+    @SerializedName(value = "trade_type")
+    private TradeType tradeType;
     @JsonProperty(value = "trade_state")
-    private TradeStateEnum tradeState;
+    @SerializedName(value = "trade_state")
+    private TradeState tradeState;
     @JsonProperty(value = "trade_state_desc")
+    @SerializedName(value = "trade_state_desc")
     private String tradeStateDesc;
     @JsonProperty(value = "bank_type")
+    @SerializedName(value = "bank_type")
     private String bankType;
     private String attach;
     @JsonProperty(value = "success_time")
+    @SerializedName(value = "success_time")
     private String successTime;
     private Payer payer;
-    private Amount amount;
-
-
-    @Data
-    @SuperBuilder
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class Payer{
-        @JsonProperty(value = "openid")
-        private String openId;
-    }
-
-    @Data
-    @SuperBuilder
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class Amount{
-        private int total;
-        @JsonProperty(value = "payer_total")
-        private int payerTotal;
-        private String currency;
-        @JsonProperty(value = "payer_currency")
-        private String payerCurrency;
-    }
-
-    public enum TradeStateEnum {
-        SUCCESS,
-        REFUND,
-        NOTPAY,
-        CLOSED,
-        REVOKED,
-        USERPAYING,
-        PAYERROR,
-        ACCEPT
-    }
-
-    public enum TradeTypeEnum {
-        JSAPI,
-        NATIVE,
-        APP,
-        MICROPAY,
-        MWEB,
-        FACEPAY
-    }
+    private TransactionAmount amount;
 }

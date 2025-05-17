@@ -15,6 +15,7 @@ public class Amount {
     /**
      * 总金额
      */
+
     private Integer total;
     /**
      * 货币类型
