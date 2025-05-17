@@ -11,7 +11,7 @@
     <name>Triones:Payment</name>
     <modules>
         <module>triones-payment-alipay</module>
-        <module>triones-payment-wxpay</module>
+        <module>triones-payment-wechatpay</module>
         <module>triones-payment-commons</module>
     </modules>
 
@@ -72,7 +72,7 @@
             </dependency>
             <dependency>
                 <groupId>com.trionesdev.payment</groupId>
-                <artifactId>triones-payment-wxpay</artifactId>
+                <artifactId>triones-payment-wechatpay</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
