@@ -1,12 +1,12 @@
 package com.trionesdev.payment.wechatpay.v3;
 
-import com.trionesdev.payment.wechatpay.v3.model.WechatPayCloseOrderRequest;
-import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayNotifyRequest;
-import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayRefoundNotifyResponse;
-import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayTransactionNotifyResponse;
+import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayNotifyParseRequest;
+import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayRefoundNotifyParseResponse;
+import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayTransactionNotifyParseResponse;
 import com.trionesdev.payment.wechatpay.v3.payment.app.WechatPayApp;
 import com.trionesdev.payment.wechatpay.v3.payment.h5.WechatPayH5;
 import com.trionesdev.payment.wechatpay.v3.payment.jsapi.WechatPayJsApi;
+import com.trionesdev.payment.wechatpay.v3.payment.model.WechatPayCloseOrderRequest;
 import com.trionesdev.payment.wechatpay.v3.payment.nativepay.WechatPayNative;
 
 public interface WechatPayTemplate {
@@ -26,7 +26,7 @@ public interface WechatPayTemplate {
 
     void closeOrder(WechatPayCloseOrderRequest request);
 
-    WechatPayTransactionNotifyResponse transactionNotify(WechatPayNotifyRequest wxPayNotifyRequest);
+    WechatPayTransactionNotifyParseResponse transactionNotify(WechatPayNotifyParseRequest wxPayNotifyRequest);
 
-    WechatPayRefoundNotifyResponse refundNotify(WechatPayNotifyRequest wxPayNotifyRequest);
+    WechatPayRefoundNotifyParseResponse refundNotify(WechatPayNotifyParseRequest wxPayNotifyRequest);
 }

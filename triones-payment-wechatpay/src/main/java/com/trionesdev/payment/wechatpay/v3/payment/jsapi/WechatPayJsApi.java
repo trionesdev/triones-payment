@@ -1,7 +1,7 @@
 package com.trionesdev.payment.wechatpay.v3.payment.jsapi;
 
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayBase;
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayConfig;
+import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
+import com.trionesdev.payment.wechatpay.v3.payment.WechatPayPaymentCommons;
 import com.trionesdev.payment.wechatpay.v3.payment.jsapi.model.WechatPayJsApiCreateOrderRequest;
 import com.trionesdev.payment.wechatpay.v3.payment.jsapi.model.WechatPayJsApiCreateOrderResponse;
 import com.trionesdev.payment.wechatpay.v3.payment.jsapi.model.WechatPayJsApiCreateOrderWithRequestPaymentResponse;
@@ -13,7 +13,7 @@ import com.wechat.pay.java.service.payments.jsapi.model.PrepayWithRequestPayment
 /**
  * 支付JSAPI
  */
-public class WechatPayJsApi extends WechatPayBase {
+public class WechatPayJsApi extends WechatPayPaymentCommons {
     private final JsapiService jsapiService;
     private final JsapiServiceExtension jsapiServiceExtension;
 

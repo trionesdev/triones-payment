@@ -1,7 +1,7 @@
 package com.trionesdev.payment.wechatpay.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayConfig;
+import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

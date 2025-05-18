@@ -2,6 +2,8 @@ package com.trionesdev.payment.wechatpay.v3.model.notify;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
+import com.trionesdev.payment.wechatpay.v3.enums.TradeState;
+import com.trionesdev.payment.wechatpay.v3.enums.TradeType;
 import com.trionesdev.payment.wechatpay.v3.model.Payer;
 import com.trionesdev.payment.wechatpay.v3.model.TransactionAmount;
 import lombok.AllArgsConstructor;
@@ -18,25 +20,25 @@ import java.io.Serializable;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WechatPayRefoundNotifyResponse implements Serializable {
+public class WechatPayTransactionNotifyParseResponse implements Serializable {
     @JsonProperty(value = "mchid")
-    @SerializedName(value = "mchid")
+    @SerializedName("mchid")
     private String mchId;
     @JsonProperty(value = "appid")
-    @SerializedName(value = "appid")
+    @SerializedName("appid")
     private String appId;
     @JsonProperty(value = "out_trade_no")
-    @SerializedName(value = "out_trade_no")
+    @SerializedName("out_trade_no")
     private String outTradeNo;
     @JsonProperty(value = "transaction_id")
     @SerializedName(value = "transaction_id")
     private String transactionId;
     @JsonProperty(value = "trade_type")
     @SerializedName(value = "trade_type")
-    private String tradeType;
+    private TradeType tradeType;
     @JsonProperty(value = "trade_state")
     @SerializedName(value = "trade_state")
-    private String tradeState;
+    private TradeState tradeState;
     @JsonProperty(value = "trade_state_desc")
     @SerializedName(value = "trade_state_desc")
     private String tradeStateDesc;
@@ -49,5 +51,4 @@ public class WechatPayRefoundNotifyResponse implements Serializable {
     private String successTime;
     private Payer payer;
     private TransactionAmount amount;
-
 }

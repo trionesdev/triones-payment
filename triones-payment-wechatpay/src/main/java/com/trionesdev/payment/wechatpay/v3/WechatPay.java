@@ -1,7 +1,5 @@
 package com.trionesdev.payment.wechatpay.v3;
 
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayBase;
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayConfig;
 import com.trionesdev.payment.wechatpay.v3.payment.app.WechatPayApp;
 import com.trionesdev.payment.wechatpay.v3.payment.h5.WechatPayH5;
 import com.trionesdev.payment.wechatpay.v3.payment.jsapi.WechatPayJsApi;

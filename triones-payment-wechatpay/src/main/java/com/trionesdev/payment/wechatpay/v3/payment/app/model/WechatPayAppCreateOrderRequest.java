@@ -2,7 +2,7 @@ package com.trionesdev.payment.wechatpay.v3.payment.app.model;
 
 import com.trionesdev.payment.wechatpay.v3.model.Payer;
 import com.trionesdev.payment.wechatpay.v3.model.WechatPayBaseCreateOrderRequest;
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayConfig;
+import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
 import com.trionesdev.payment.wechatpay.v3.payment.app.WechatPayAppConvert;
 import com.wechat.pay.java.service.payments.app.model.PrepayRequest;
 import lombok.AllArgsConstructor;

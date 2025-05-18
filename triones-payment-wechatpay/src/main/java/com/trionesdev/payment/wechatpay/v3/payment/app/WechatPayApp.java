@@ -1,7 +1,7 @@
 package com.trionesdev.payment.wechatpay.v3.payment.app;
 
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayBase;
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayConfig;
+import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
+import com.trionesdev.payment.wechatpay.v3.payment.WechatPayPaymentCommons;
 import com.trionesdev.payment.wechatpay.v3.payment.app.model.WechatPayAppCreateOrderRequest;
 import com.trionesdev.payment.wechatpay.v3.payment.app.model.WechatPayAppCreateOrderResponse;
 import com.trionesdev.payment.wechatpay.v3.payment.app.model.WechatPayAppCreateOrderWithRequestPaymentResponse;
@@ -10,7 +10,7 @@ import com.wechat.pay.java.service.payments.app.AppServiceExtension;
 import com.wechat.pay.java.service.payments.app.model.PrepayResponse;
 import com.wechat.pay.java.service.payments.app.model.PrepayWithRequestPaymentResponse;
 
-public class WechatPayApp extends WechatPayBase {
+public class WechatPayApp extends WechatPayPaymentCommons {
     private final AppService appService;
     private final AppServiceExtension appServiceExtension;
 

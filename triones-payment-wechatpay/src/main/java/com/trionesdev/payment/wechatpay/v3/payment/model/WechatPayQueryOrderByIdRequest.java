@@ -1,4 +1,4 @@
-package com.trionesdev.payment.wechatpay.v3.model;
+package com.trionesdev.payment.wechatpay.v3.payment.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

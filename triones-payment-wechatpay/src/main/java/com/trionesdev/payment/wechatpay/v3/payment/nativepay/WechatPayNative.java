@@ -1,8 +1,8 @@
 package com.trionesdev.payment.wechatpay.v3.payment.nativepay;
 
 import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayNativeQueryOrderResponse;
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayBase;
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayConfig;
+import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
+import com.trionesdev.payment.wechatpay.v3.payment.WechatPayPaymentCommons;
 import com.trionesdev.payment.wechatpay.v3.payment.nativepay.model.*;
 import com.wechat.pay.java.service.payments.model.Transaction;
 import com.wechat.pay.java.service.payments.nativepay.NativePayService;
@@ -11,7 +11,7 @@ import com.wechat.pay.java.service.payments.nativepay.model.PrepayResponse;
 /**
  * Native支付
  */
-public class WechatPayNative extends WechatPayBase {
+public class WechatPayNative extends WechatPayPaymentCommons {
     private final NativePayService nativePayService;
 
     public WechatPayNative(WechatPayConfig wxPayConfig) {

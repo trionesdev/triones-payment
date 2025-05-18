@@ -1,7 +1,7 @@
 package com.trionesdev.payment.wechatpay.v3.payment.nativepay.model;
 
 import com.trionesdev.payment.wechatpay.v3.model.Payer;
-import com.trionesdev.payment.wechatpay.v3.payment.WechatPayConfig;
+import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
 import com.trionesdev.payment.wechatpay.v3.payment.nativepay.WechatPayNativeConvert;
 import com.trionesdev.payment.wechatpay.v3.model.WechatPayBaseCreateOrderRequest;
 import com.wechat.pay.java.service.payments.nativepay.model.PrepayRequest;

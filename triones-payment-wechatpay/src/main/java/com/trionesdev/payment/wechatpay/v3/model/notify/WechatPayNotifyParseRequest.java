@@ -10,7 +10,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WechatPayNotifyRequest {
+public class WechatPayNotifyParseRequest {
     private String serial;
     private String nonce;
     private String timestamp;
