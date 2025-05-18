@@ -32,7 +32,7 @@ public class WechatPayOperation extends WechatPayBase {
         HttpHeaders headers = new HttpHeaders();
         headers.addHeader("Accept", MediaType.APPLICATION_JSON.getValue());
         headers.addHeader("Content-Type", MediaType.APPLICATION_JSON.getValue());
-        HttpRequest httpRequest = (new HttpRequest.Builder()).httpMethod(HttpMethod.POST).url(requestPath).headers(headers).build();
+        HttpRequest httpRequest = (new HttpRequest.Builder()).httpMethod(HttpMethod.POST).url(requestPath).headers(headers).body(createRequestBody(request)).build();
         HttpResponse<WechatPayCreateTransferResponse> httpResponse = this.httpClient.execute(httpRequest, WechatPayCreateTransferResponse.class);
         return httpResponse.getServiceResponse();
     }
