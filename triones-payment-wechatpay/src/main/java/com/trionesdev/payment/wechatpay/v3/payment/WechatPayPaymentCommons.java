@@ -2,15 +2,13 @@ package com.trionesdev.payment.wechatpay.v3.payment;
 
 import com.trionesdev.payment.wechatpay.v3.WechatPayBase;
 import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
-import com.trionesdev.payment.wechatpay.v3.payment.model.*;
 import com.trionesdev.payment.wechatpay.v3.model.WechatPayTransaction;
 import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayNotifyParseRequest;
 import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayRefoundNotifyParseResponse;
 import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayTransactionNotifyParseResponse;
+import com.trionesdev.payment.wechatpay.v3.operation.model.WechatPayCancelTransferResponse;
+import com.trionesdev.payment.wechatpay.v3.payment.model.*;
 import com.wechat.pay.java.core.http.*;
-import com.wechat.pay.java.service.payments.jsapi.model.QueryOrderByIdRequest;
-import com.wechat.pay.java.service.payments.jsapi.model.QueryOrderByOutTradeNoRequest;
-import com.wechat.pay.java.service.payments.model.Transaction;
 
 /**
  * 支付产品
@@ -27,8 +25,7 @@ public class WechatPayPaymentCommons extends WechatPayBase {
      * @return
      */
     public WechatPayTransaction queryOrderById(WechatPayQueryOrderByIdRequest request) {
-        String requestPath = "https://api.mch.weixin.qq.com/v3/pay/transactions/id/{transaction_id}";
-        requestPath = requestPath.replace("{transaction_id}", UrlEncoder.urlEncode(request.getTransactionId()));
+        String requestPath = "https://api.mch.weixin.qq.com/v3/pay/transactions/id/" + UrlEncoder.urlEncode(request.getTransactionId());
         QueryParameter queryParameter = new QueryParameter();
         if (request.getMchId() != null) {
             queryParameter.add("mchid", UrlEncoder.urlEncode(request.getMchId()));
@@ -54,8 +51,7 @@ public class WechatPayPaymentCommons extends WechatPayBase {
      * @return
      */
     public WechatPayTransaction queryOrderByOutTradeNo(WechatPayQueryOrderByOutTradeNoRequest request) {
-        String requestPath = "https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/{out_trade_no}";
-        requestPath = requestPath.replace("{out_trade_no}", UrlEncoder.urlEncode(request.getOutTradeNo()));
+        String requestPath = "https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/" + UrlEncoder.urlEncode(request.getOutTradeNo());
         QueryParameter queryParameter = new QueryParameter();
         if (request.getMchId() != null) {
             queryParameter.add("mchid", UrlEncoder.urlEncode(request.getMchId()));
@@ -80,8 +76,7 @@ public class WechatPayPaymentCommons extends WechatPayBase {
      * @param request
      */
     public void closeOrder(WechatPayCloseOrderRequest request) {
-        String requestPath = "https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/{out_trade_no}/close";
-        requestPath = requestPath.replace("{out_trade_no}", UrlEncoder.urlEncode(request.getOutTradeNo()));
+        String requestPath = "https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/" + UrlEncoder.urlEncode(request.getOutTradeNo()) + "/close";
         if (this.hostName != null) {
             requestPath = requestPath.replaceFirst(HostName.API.getValue(), this.hostName.getValue());
         }
@@ -131,8 +126,7 @@ public class WechatPayPaymentCommons extends WechatPayBase {
      * @return
      */
     public WechatPayRefund queryRefundByOutRefundNo(WechatPayQueryRefundByOutNoRequest request) {
-        String requestPath = "https://api.mch.weixin.qq.com/v3/refund/domestic/refunds/{out_refund_no}";
-        requestPath = requestPath.replace("{out_refund_no}", UrlEncoder.urlEncode(request.getOutRefundNo()));
+        String requestPath = "https://api.mch.weixin.qq.com/v3/refund/domestic/refunds/" + UrlEncoder.urlEncode(request.getOutRefundNo());
         QueryParameter queryParameter = new QueryParameter();
 //        if (request.getSubMchid() != null) {
 //            queryParameter.add("sub_mchid", UrlEncoder.urlEncode(request.getSubMchid()));

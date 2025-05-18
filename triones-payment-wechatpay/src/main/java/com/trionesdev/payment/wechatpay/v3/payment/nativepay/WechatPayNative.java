@@ -1,10 +1,9 @@
 package com.trionesdev.payment.wechatpay.v3.payment.nativepay;
 
-import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayNativeQueryOrderResponse;
 import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
 import com.trionesdev.payment.wechatpay.v3.payment.WechatPayPaymentCommons;
-import com.trionesdev.payment.wechatpay.v3.payment.nativepay.model.*;
-import com.wechat.pay.java.service.payments.model.Transaction;
+import com.trionesdev.payment.wechatpay.v3.payment.nativepay.model.WechatPayNativeCreateOrderRequest;
+import com.trionesdev.payment.wechatpay.v3.payment.nativepay.model.WechatPayNativeCreateOrderResponse;
 import com.wechat.pay.java.service.payments.nativepay.NativePayService;
 import com.wechat.pay.java.service.payments.nativepay.model.PrepayResponse;
 
@@ -31,23 +30,4 @@ public class WechatPayNative extends WechatPayPaymentCommons {
         return WechatPayNativeCreateOrderResponse.builder().codeUrl(response.getCodeUrl()).build();
     }
 
-    /**
-     * 微信支付订单号查询
-     *
-     * @param request
-     * @return
-     */
-    public WechatPayNativeQueryOrderResponse queryOrderById(WechatPayNativeQueryOrderByIdRequest request) {
-        Transaction transaction = nativePayService.queryOrderById(request.toSdkRequest());
-        return WechatPayNativeConvert.INSTANCE.from(transaction);
-    }
-
-    public WechatPayNativeQueryOrderResponse queryOrderByOutTradeNo(WechatPayNativeQueryOrderByOutTradeNoRequest request) {
-        Transaction transaction = nativePayService.queryOrderByOutTradeNo(request.toSdkRequest());
-        return WechatPayNativeConvert.INSTANCE.from(transaction);
-    }
-
-    public void closeOrder(WechatPayNativeCloseOrderRequest request) {
-        nativePayService.closeOrder(request.toSdkRequest());
-    }
 }
