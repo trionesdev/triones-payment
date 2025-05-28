@@ -24,7 +24,7 @@ public class WechatPayJsApi extends WechatPayPaymentCommons {
     }
 
     /**
-     * 创建订单
+     * 创建JSAPI支付订单
      *
      * @param request
      * @return

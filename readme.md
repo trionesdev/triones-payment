@@ -3,7 +3,7 @@
 ---
 
 ## 支持渠道
-[微信支付](triones-payment-wechatpay)
+[微信支付](triones-payment-wechatpay/readme.md)
 
 [支付宝](triones-payment-alipay)
 
@@ -22,15 +22,7 @@
     </dependencies>
 </dependencyManagement>
 ```
-### 使用微信支付
-添加依赖
-```xml
-<dependency>
-    <groupId>com.trionesdev.payment</groupId>
-    <artifactId>triones-payment-wechatpay</artifactId>
-    <version>版本号</version>
-</dependency>
-```
+
 
 ---
 ### 关注我们，一起交流
