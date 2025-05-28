@@ -33,7 +33,7 @@
 退款成功回调解析 `refundNotify`
 
 #### h5支付(独有)
-[代码路径](triones-payment-wechatpay/src/main/java/com/trionesdev/payment/wechatpay/v3/payment/h5/WechatPayH5.java)
+[代码路径](src/main/java/com/trionesdev/payment/wechatpay/v3/payment/h5/WechatPayH5.java)
 
 方法说明
 
@@ -42,7 +42,7 @@
 
 #### jsapi支付(独有)
 
-[代码路径](triones-payment-wechatpay/src/main/java/com/trionesdev/payment/wechatpay/v3/payment/jsapi/WechatPayJsApi.java)
+[代码路径](src/main/java/com/trionesdev/payment/wechatpay/v3/payment/jsapi/WechatPayJsApi.java)
 
 方法说明
 
@@ -51,14 +51,14 @@
 创建JSAPI支付订单并返回调用参数 `createOrderWithRequestPayment`
 
 #### native支付(独有)
-[代码路径](triones-payment-wechatpay/src/main/java/com/trionesdev/payment/wechatpay/v3/payment/nativepay/WechatPayNative.java)
+[代码路径](src/main/java/com/trionesdev/payment/wechatpay/v3/payment/nativepay/WechatPayNative.java)
 
 方法说明
 
 创建Native支付订单 `createOrder`
 
 #### App(独有)
-[代码路径](triones-payment-wechatpay/src/main/java/com/trionesdev/payment/wechatpay/v3/payment/app/WechatPayApp.java)
+[代码路径](src/main/java/com/trionesdev/payment/wechatpay/v3/payment/app/WechatPayApp.java)
 
 方法说明
 
