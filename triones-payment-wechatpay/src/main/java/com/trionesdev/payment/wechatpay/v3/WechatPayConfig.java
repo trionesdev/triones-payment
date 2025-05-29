@@ -2,26 +2,22 @@ package com.trionesdev.payment.wechatpay.v3;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
 import java.util.Map;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class WechatPayConfig {
-    private String appId;
-    private String mchId;
-    private String apiV3Key;
-    private String merchantSerialNo;
-    private String privateKey;
-    private String privateCert;
-    private String privateKeyPath;
-    private String privateCertPath;
+public class WechatPayConfig extends WechatPayCredentials {
     private String transactionNotifyUrl;
     private String refundNotifyUrl;
     private Map<String,String> transactionNotifyUrls;
     private Map<String,String> refundNotifyUrls;
+    private List<WechatPayCredentials> credentials;
 }
