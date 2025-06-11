@@ -1,7 +1,7 @@
 package com.trionesdev.payment.wechatpay.v3.convert;
 
-import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayRefoundNotifyParseResponse;
-import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayTransactionNotifyParseResponse;
+import com.trionesdev.payment.wechatpay.v3.payment.model.notify.WechatPayRefoundNotifyParseResponse;
+import com.trionesdev.payment.wechatpay.v3.payment.model.notify.WechatPayTransactionNotifyParseResponse;
 import com.wechat.pay.java.service.payments.model.Transaction;
 import com.wechat.pay.java.service.refund.model.RefundNotification;
 import org.mapstruct.Builder;

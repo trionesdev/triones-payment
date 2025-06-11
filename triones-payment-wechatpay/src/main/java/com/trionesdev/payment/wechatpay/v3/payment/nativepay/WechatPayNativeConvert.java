@@ -2,7 +2,7 @@ package com.trionesdev.payment.wechatpay.v3.payment.nativepay;
 
 import com.trionesdev.payment.wechatpay.v3.payment.nativepay.model.WechatPayNativeCloseOrderRequest;
 import com.trionesdev.payment.wechatpay.v3.payment.nativepay.model.WechatPayNativeCreateOrderRequest;
-import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayNativeQueryOrderResponse;
+import com.trionesdev.payment.wechatpay.v3.payment.nativepay.model.WechatPayNativeQueryOrderResponse;
 import com.trionesdev.payment.wechatpay.v3.payment.nativepay.model.WechatPayNativeQueryOrderByIdRequest;
 import com.trionesdev.payment.wechatpay.v3.payment.nativepay.model.WechatPayNativeQueryOrderByOutTradeNoRequest;
 import com.wechat.pay.java.service.payments.model.Transaction;

@@ -2,8 +2,7 @@ package com.trionesdev.payment.wechatpay.v3.operation;
 
 import com.trionesdev.payment.wechatpay.v3.WechatPayBase;
 import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
-import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayNotifyParseRequest;
-import com.trionesdev.payment.wechatpay.v3.model.notify.WechatPayRefoundNotifyParseResponse;
+import com.trionesdev.payment.wechatpay.v3.payment.model.notify.WechatPayNotifyParseRequest;
 import com.trionesdev.payment.wechatpay.v3.operation.model.*;
 import com.wechat.pay.java.core.http.*;
 

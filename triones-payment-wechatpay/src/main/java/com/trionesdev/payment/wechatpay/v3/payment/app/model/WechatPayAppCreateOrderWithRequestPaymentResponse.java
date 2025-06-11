@@ -14,6 +14,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WechatPayAppCreateOrderWithRequestPaymentResponse implements Serializable {
+    private String prePayId;
     private String appId;
     private String timeStamp;
     private String nonceStr;

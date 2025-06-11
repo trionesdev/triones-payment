@@ -1,4 +1,4 @@
-package com.trionesdev.payment.wechatpay.v3.model.notify;
+package com.trionesdev.payment.wechatpay.v3.payment.model.notify;
 
 import com.google.gson.annotations.SerializedName;
 import com.trionesdev.payment.wechatpay.v3.model.TransactionAmount;

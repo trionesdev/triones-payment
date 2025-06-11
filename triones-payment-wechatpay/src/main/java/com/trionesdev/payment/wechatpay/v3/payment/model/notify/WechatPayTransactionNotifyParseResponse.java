@@ -1,4 +1,4 @@
-package com.trionesdev.payment.wechatpay.v3.model.notify;
+package com.trionesdev.payment.wechatpay.v3.payment.model.notify;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;

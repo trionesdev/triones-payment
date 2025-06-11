@@ -28,12 +28,13 @@ public class WechatPayApp extends WechatPayPaymentCommons {
      */
     public WechatPayAppCreateOrderResponse createOrder(WechatPayAppCreateOrderRequest request) {
         PrepayResponse response = appService.prepay(request.toSdkRequest(wxPayConfig));
-        return WechatPayAppConvert.INSTANCE.from(response);
+        return WechatPayAppCreateOrderResponse.builder().prepayId(response.getPrepayId()).build();
     }
 
     public WechatPayAppCreateOrderWithRequestPaymentResponse createOrderWithRequestPayment(WechatPayAppCreateOrderRequest request) {
         PrepayWithRequestPaymentResponse response = appServiceExtension.prepayWithRequestPayment(request.toSdkRequest(wxPayConfig));
         return WechatPayAppCreateOrderWithRequestPaymentResponse.builder()
+                .prePayId(response.getPrepayId())
                 .appId(response.getAppid())
                 .timeStamp(response.getTimestamp())
                 .nonceStr(response.getNonceStr())

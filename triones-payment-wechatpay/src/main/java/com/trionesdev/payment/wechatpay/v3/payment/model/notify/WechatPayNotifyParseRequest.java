@@ -1,4 +1,4 @@
-package com.trionesdev.payment.wechatpay.v3.model.notify;
+package com.trionesdev.payment.wechatpay.v3.payment.model.notify;
 
 import com.wechat.pay.java.core.notification.RequestParam;
 import lombok.AllArgsConstructor;
