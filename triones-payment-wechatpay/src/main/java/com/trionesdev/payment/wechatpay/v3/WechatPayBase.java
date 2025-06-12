@@ -1,5 +1,7 @@
 package com.trionesdev.payment.wechatpay.v3;
 
+import com.google.common.base.Charsets;
+import com.google.common.io.Resources;
 import com.wechat.pay.java.core.Config;
 import com.wechat.pay.java.core.RSAAutoCertificateConfig;
 import com.wechat.pay.java.core.http.*;
@@ -11,6 +13,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.security.cert.X509Certificate;
 
 public abstract class WechatPayBase {
@@ -30,6 +37,20 @@ public abstract class WechatPayBase {
         this.notificationParser = new NotificationParser((NotificationConfig) config);
     }
 
+
+    private boolean isResource(String path) {
+        return StringUtils.startsWithIgnoreCase(path, "classpath:");
+    }
+
+    private String readResource(String path) {
+        URL url = Resources.getResource(path.replace("classpath:", ""));
+        try {
+            return Resources.toString(url, Charsets.UTF_8);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private Config buildConfig(WechatPayConfig wxPayConfig) {
         RSAAutoCertificateConfig.Builder builder = new RSAAutoCertificateConfig
                 .Builder()
@@ -42,7 +63,12 @@ public abstract class WechatPayBase {
         if (StringUtils.isNoneBlank(wxPayConfig.getPrivateKey())) {
             builder.privateKey(wxPayConfig.getPrivateKey());
         } else {
-            builder.privateKeyFromPath(wxPayConfig.getPrivateKeyPath());
+            if (isResource(wxPayConfig.getPrivateKeyPath())) {
+                builder.privateKey(readResource(wxPayConfig.getPrivateKeyPath()));
+            } else {
+                builder.privateKeyFromPath(wxPayConfig.getPrivateKeyPath());
+            }
+
         }
         return builder.build();
     }
@@ -56,12 +82,14 @@ public abstract class WechatPayBase {
         if (StringUtils.isNoneBlank(privateCert)) {
             certificate = PemUtil.loadX509FromString(privateCert);
         } else {
-            certificate = PemUtil.loadX509FromPath(privateCertPath);
+            if (isResource(privateCertPath)) {
+                certificate = PemUtil.loadX509FromString(readResource(privateCertPath));
+            } else {
+                certificate = PemUtil.loadX509FromPath(privateCertPath);
+            }
         }
         return certificate.getSerialNumber().toString(16).toUpperCase();
     }
-
-
 
 
 }

@@ -24,21 +24,21 @@
 
 #### WechatPayConfig 属性说明
 
-| 属性                    | 说明                                  | 是否必填 | 默认值 |
-|-----------------------|-------------------------------------|------|-----|
-| appId                 | 微信公众号/小程序的appId                     |      |     |
-| mchId                 | 商户号                                 |      |     |
-| apiV3Key              | V3接口的Key                            | 是    |     |
-| merchantSerialNo      | 商户序列号，如不填，可根据证书生成                   | 否    |     |
-| privateKey            | 私钥(与privateKeyPath取一)               | 否    |     |
-| privateCert           | 证书   (与privateCertPath取一)           | 否    |     |
-| privateKeyPath        | 私钥路径，以classpath:开头 (与privateKey取一)  | 否    |     |
-| privateCertPath       | 证书路径，以classpath:开头 (与privateCert取一) | 否    |     |
-| transactionNotifyUrl  | 交易回调地址，可以在请求参数中传递                   | 否    |     |
-| refundNotifyUrl       | 退款回调地址，可以在请求参数中传递                   | 否    |     |
-| transactionNotifyUrls | 退款回调地址MAP，用于根据Key获取                 | 否    |     |
-| refundNotifyUrls      | 退款回调地址MAP，用于根据Key获取                 | 否    |     |
-| credentials           |                                     | 否    |     |
+| 属性                    | 说明                                       | 是否必填 | 默认值 |
+|-----------------------|------------------------------------------|------|-----|
+| appId                 | 微信公众号/小程序的appId                          |      |     |
+| mchId                 | 商户号                                      |      |     |
+| apiV3Key              | V3接口的Key                                 | 是    |     |
+| merchantSerialNo      | 商户序列号，如不填，可根据证书生成                        | 否    |     |
+| privateKey            | 私钥(与privateKeyPath取一)                    | 否    |     |
+| privateCert           | 证书   (与privateCertPath取一)                | 否    |     |
+| privateKeyPath        | 私钥路径，以classpath:开头或绝对路径 (与privateKey取一)  | 否    |     |
+| privateCertPath       | 证书路径，以classpath:开头或绝对路径 (与privateCert取一) | 否    |     |
+| transactionNotifyUrl  | 交易回调地址，可以在请求参数中传递                        | 否    |     |
+| refundNotifyUrl       | 退款回调地址，可以在请求参数中传递                        | 否    |     |
+| transactionNotifyUrls | 退款回调地址MAP，用于根据Key获取                      | 否    |     |
+| refundNotifyUrls      | 退款回调地址MAP，用于根据Key获取                      | 否    |     |
+| credentials           |                                          | 否    |     |
 
 ```java
 public WechatPay getWxPay() {
