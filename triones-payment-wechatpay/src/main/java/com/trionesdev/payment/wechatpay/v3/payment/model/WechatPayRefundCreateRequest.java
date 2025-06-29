@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.util.List;
+import java.util.Vector;
 
 @Data
 @SuperBuilder
@@ -19,6 +20,8 @@ public class WechatPayRefundCreateRequest {
     private String transactionId;
     @SerializedName(value = "out_trade_no")
     private String outTradeNo;
+    @SerializedName(value = "out_refund_no")
+    private String outRefundNo;
     private String reason;
     @SerializedName(value = "notify_url")
     private String notifyUrl;

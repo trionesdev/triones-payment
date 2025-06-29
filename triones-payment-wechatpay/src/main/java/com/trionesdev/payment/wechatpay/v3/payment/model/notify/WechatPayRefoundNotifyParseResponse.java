@@ -3,6 +3,7 @@ package com.trionesdev.payment.wechatpay.v3.payment.model.notify;
 import com.google.gson.annotations.SerializedName;
 import com.trionesdev.payment.wechatpay.v3.model.TransactionAmount;
 import com.trionesdev.payment.wechatpay.v3.payment.enums.RefundStatus;
+import com.trionesdev.payment.wechatpay.v3.payment.model.RefundAmount;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,6 +38,6 @@ public class WechatPayRefoundNotifyParseResponse implements Serializable {
 
     @SerializedName(value = "user_received_account ")
     private String userReceivedAccount;
-    private TransactionAmount amount;
+    private RefundAmount amount;
 
 }
