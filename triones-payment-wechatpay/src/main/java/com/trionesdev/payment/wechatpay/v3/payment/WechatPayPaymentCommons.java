@@ -109,7 +109,7 @@ public class WechatPayPaymentCommons extends WechatPayBase {
         if (this.hostName != null) {
             requestPath = requestPath.replaceFirst(HostName.API.getValue(), this.hostName.getValue());
         }
-
+        request.fill(this.wxPayConfig);
         HttpHeaders headers = new HttpHeaders();
         headers.addHeader("Accept", MediaType.APPLICATION_JSON.getValue());
         headers.addHeader("Content-Type", MediaType.APPLICATION_JSON.getValue());

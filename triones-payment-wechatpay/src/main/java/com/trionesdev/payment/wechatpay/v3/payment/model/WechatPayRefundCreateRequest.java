@@ -1,12 +1,14 @@
 package com.trionesdev.payment.wechatpay.v3.payment.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
 import com.trionesdev.payment.wechatpay.v3.payment.enums.FundsAccount;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Vector;
@@ -31,4 +33,10 @@ public class WechatPayRefundCreateRequest {
     @SerializedName(value = "goods_detail")
     private List<GoodsDetail> goodsDetail;
 
+
+    public void fill(WechatPayConfig config){
+        if (StringUtils.isBlank(this.getNotifyUrl())) {
+            this.setNotifyUrl(config.getRefundNotifyUrl());
+        }
+    }
 }
