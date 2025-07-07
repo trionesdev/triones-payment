@@ -27,7 +27,7 @@ public class WechatPayOperation extends WechatPayBase {
         if (this.hostName != null) {
             requestPath = requestPath.replaceFirst(HostName.API.getValue(), this.hostName.getValue());
         }
-
+        request.initialize(this.wxPayConfig);
         HttpHeaders headers = new HttpHeaders();
         headers.addHeader("Accept", MediaType.APPLICATION_JSON.getValue());
         headers.addHeader("Content-Type", MediaType.APPLICATION_JSON.getValue());

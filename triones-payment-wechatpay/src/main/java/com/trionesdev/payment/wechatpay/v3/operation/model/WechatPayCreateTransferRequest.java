@@ -1,7 +1,9 @@
 package com.trionesdev.payment.wechatpay.v3.operation.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
 import lombok.Data;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
 import java.util.List;
@@ -28,4 +30,11 @@ public class WechatPayCreateTransferRequest implements Serializable {
     private String userRecvPerception;
     @SerializedName(value = "transfer_scene_report_infos")
     private List<TransferSceneReportInfo> transferSceneReportInfos;
+
+    public void initialize(WechatPayConfig config) {
+        if (StringUtils.isBlank(this.getNotifyUrl())) {
+            this.notifyUrl = config.getTransactionNotifyUrl();
+        }
+    }
+
 }
