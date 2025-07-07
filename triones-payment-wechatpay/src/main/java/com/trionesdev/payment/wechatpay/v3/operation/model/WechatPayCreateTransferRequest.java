@@ -20,8 +20,14 @@ public class WechatPayCreateTransferRequest implements Serializable {
     private String openId;
     @SerializedName(value = "user_name")
     private String userName;
+    /**
+     * 转账金额
+     */
     @SerializedName(value = "transfer_amount")
     private Integer transferAmount;
+    /**
+     * 转账备注
+     */
     @SerializedName(value = "transfer_remark")
     private String transferRemark;
     @SerializedName(value = "notify_url")
