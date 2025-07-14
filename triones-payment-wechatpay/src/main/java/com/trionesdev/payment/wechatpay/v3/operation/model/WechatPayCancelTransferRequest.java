@@ -6,6 +6,5 @@ import java.io.Serializable;
 
 @Data
 public class WechatPayCancelTransferRequest implements Serializable {
-    private String billNo;
     private String outBillNo;
 }
