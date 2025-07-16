@@ -1,8 +1,8 @@
-package com.trionesdev.payment.alipay.payment;
+package com.trionesdev.payment.alipay.v2.payment;
 
-import com.trionesdev.payment.alipay.AlipayIntegrationConfig;
-import com.trionesdev.payment.alipay.payment.jsapi.AlipayJsapi;
-import com.trionesdev.payment.alipay.payment.page.AlipayPage;
+import com.trionesdev.payment.alipay.v2.AlipayIntegrationConfig;
+import com.trionesdev.payment.alipay.v2.payment.jsapi.AlipayJsapi;
+import com.trionesdev.payment.alipay.v2.payment.page.AlipayPage;
 
 public class AlipayPayment extends AlipayPaymentCommons {
     private final AlipayPage aliPayPage;

@@ -1,11 +1,10 @@
-package com.trionesdev.payment.alipay.payment.page;
+package com.trionesdev.payment.alipay.v2.payment.page;
 
 import com.alipay.api.AlipayApiException;
-import com.alipay.api.domain.AlipayTradePagePayModel;
 import com.alipay.api.request.AlipayTradePagePayRequest;
 import com.alipay.api.response.AlipayTradePagePayResponse;
-import com.trionesdev.payment.alipay.AlipayIntegrationConfig;
-import com.trionesdev.payment.alipay.payment.AlipayPaymentCommons;
+import com.trionesdev.payment.alipay.v2.AlipayIntegrationConfig;
+import com.trionesdev.payment.alipay.v2.payment.AlipayPaymentCommons;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -22,12 +21,17 @@ public class AlipayPage extends AlipayPaymentCommons {
      * @param model
      * @return
      */
-    public AlipayTradePagePayResponse createOrderWithRequestPayment(AlipayTradePagePayModel model) {
+    public AlipayTradePagePayResponse createOrderWithRequestPayment(AlipayCreateOrderRequest model) {
         AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
-        if (StringUtils.isBlank(model.getProductCode())){
+        if (StringUtils.isBlank(model.getProductCode())) {
             model.setProductCode("FAST_INSTANT_TRADE_PAY");
         }
         request.setBizModel(model);
+        if (StringUtils.isNotBlank(model.getNotifyUrl())) {
+            request.setNotifyUrl(model.getNotifyUrl());
+        } else if (StringUtils.isNotBlank(alipayConfig.getNotifyUrl())) {
+            request.setNotifyUrl(alipayConfig.getNotifyUrl());
+        }
         try {
             AlipayTradePagePayResponse response = alipayClient.pageExecute(request, "POST");
             return response;
