@@ -1,7 +1,8 @@
-package com.trionesdev.payment.alipay.v3;
+package com.trionesdev.payment.alipay.v3.payment.page;
 
 
 import com.google.gson.annotations.SerializedName;
+import com.trionesdev.payment.alipay.v3.modal.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -14,7 +15,7 @@ import java.util.List;
 public class AlipayPageCreateOrderRequest {
     private String outTradeNo;
     @SerializedName("total_amount")
-    private BigDecimal totalAmount;
+    private String totalAmount;
     private String subject;
     @SerializedName("product_code")
     private String productCode = "FAST_INSTANT_TRADE_PAY";
@@ -46,4 +47,6 @@ public class AlipayPageCreateOrderRequest {
     private ExtUserInfo extUserInfo;
     @SerializedName("invoice_info")
     private InvoiceInfo invoiceInfo;
+    @SerializedName("notify_url")
+    private String notifyUrl;
 }

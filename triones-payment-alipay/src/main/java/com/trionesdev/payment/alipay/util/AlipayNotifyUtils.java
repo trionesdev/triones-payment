@@ -1,7 +1,7 @@
 package com.trionesdev.payment.alipay.util;
 
 import com.google.common.collect.Maps;
-import com.trionesdev.payment.alipay.v2.model.AlipayNotify;
+import com.trionesdev.payment.alipay.AlipayNotify;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;

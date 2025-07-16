@@ -1,4 +1,4 @@
-package com.trionesdev.payment.alipay.v2.model;
+package com.trionesdev.payment.alipay;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
