@@ -5,14 +5,13 @@ import com.google.gson.annotations.SerializedName;
 import com.trionesdev.payment.alipay.v3.modal.*;
 import lombok.Data;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * https://opendocs.alipay.com/open-v3/2423fad5_alipay.trade.page.pay?scene=22&pathHash=3eadd5d3
  */
 @Data
-public class AlipayPageCreateOrderRequest {
+public class AlipayTradePagePayModel {
     private String outTradeNo;
     @SerializedName("total_amount")
     private String totalAmount;

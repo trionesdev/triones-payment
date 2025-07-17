@@ -5,6 +5,6 @@ import lombok.experimental.SuperBuilder;
 
 @Data
 @SuperBuilder
-public class AlipayPageCreateOrderResponse {
+public class AlipayTradePagePayResponseModel {
     private String pageRedirectionData;
 }
