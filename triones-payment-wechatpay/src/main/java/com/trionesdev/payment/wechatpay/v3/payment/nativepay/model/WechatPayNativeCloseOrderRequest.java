@@ -1,6 +1,6 @@
 package com.trionesdev.payment.wechatpay.v3.payment.nativepay.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import com.trionesdev.payment.wechatpay.v3.payment.nativepay.WechatPayNativeConvert;
 import com.wechat.pay.java.service.payments.nativepay.model.CloseOrderRequest;
 import lombok.AllArgsConstructor;
@@ -15,10 +15,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WechatPayNativeCloseOrderRequest implements Serializable {
-    @JsonProperty(value = "out_trade_no")
+    @SerializedName(value = "out_trade_no")
     private String outTradeNo;
 
-    @JsonProperty(value = "mchid")
+    @SerializedName(value = "mchid")
     private String mchId;
 
     public CloseOrderRequest toSdkRequest() {

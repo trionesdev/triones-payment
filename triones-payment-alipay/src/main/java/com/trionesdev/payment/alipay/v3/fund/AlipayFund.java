@@ -1,12 +1,11 @@
 package com.trionesdev.payment.alipay.v3.fund;
 
-import com.trionesdev.payment.alipay.v3.AlipayBase;
 import com.trionesdev.payment.alipay.v3.AlipayConfig;
 import com.trionesdev.payment.alipay.v3.fund.transfer.AlipayMerchantTransfer;
 import lombok.Getter;
 
 
-public class AlipayFund extends AlipayBase {
+public class AlipayFund extends AlipayFundCommons {
     @Getter
     private final AlipayMerchantTransfer merchantTransfer;
 

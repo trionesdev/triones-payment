@@ -1,6 +1,6 @@
 package com.trionesdev.payment.wechatpay.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,13 +13,13 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GoodsDetail {
-    @JsonProperty(value = "merchant_goods_id")
+    @SerializedName(value = "merchant_goods_id")
     private String MerchantGoodsId;
-    @JsonProperty(value = "wechatpay_goods_id ")
+    @SerializedName(value = "wechatpay_goods_id ")
     private String wechatPayGoodsId;
-    @JsonProperty(value = "goods_name")
+    @SerializedName(value = "goods_name")
     private String goodsName;
     private int quantity;
-    @JsonProperty(value = "unit_price")
+    @SerializedName(value = "unit_price")
     private int unitPrice;
 }

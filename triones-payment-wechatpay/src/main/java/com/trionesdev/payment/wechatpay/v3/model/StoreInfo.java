@@ -1,6 +1,6 @@
 package com.trionesdev.payment.wechatpay.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 public class StoreInfo {
     private String id;
     private String name;
-    @JsonProperty(value = "area_code")
+    @SerializedName(value = "area_code")
     private String areaCode;
     private String address;
 }

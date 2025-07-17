@@ -1,6 +1,6 @@
 package com.trionesdev.payment.wechatpay.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,12 +14,12 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 public class H5Info {
     private String type;
-    @JsonProperty(value = "app_name")
+    @SerializedName(value = "app_name")
     private String appName;
-    @JsonProperty(value = "app_url")
+    @SerializedName(value = "app_url")
     private String appUrl;
-    @JsonProperty(value = "bundle_id")
+    @SerializedName(value = "bundle_id")
     private String bundleId;
-    @JsonProperty(value = "package_name")
+    @SerializedName(value = "package_name")
     private String packageName;
 }

@@ -4,11 +4,11 @@ import com.alipay.v3.api.AlipayFundTransUniApi;
 import com.alipay.v3.model.AlipayFundTransUniTransferModel;
 import com.alipay.v3.model.AlipayFundTransUniTransferResponseModel;
 import com.trionesdev.payment.alipay.v3.AlipayConfig;
-import com.trionesdev.payment.alipay.v3.fund.AlipayFund;
+import com.trionesdev.payment.alipay.v3.fund.AlipayFundCommons;
 import lombok.SneakyThrows;
 import org.apache.commons.lang3.StringUtils;
 
-public class AlipayMerchantTransfer extends AlipayFund {
+public class AlipayMerchantTransfer  extends AlipayFundCommons {
     AlipayFundTransUniApi alipayFundTransUniApi = new AlipayFundTransUniApi();
 
     public AlipayMerchantTransfer(AlipayConfig alipayConfig) {
