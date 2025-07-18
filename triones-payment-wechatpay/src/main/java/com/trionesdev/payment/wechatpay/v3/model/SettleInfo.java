@@ -1,6 +1,6 @@
 package com.trionesdev.payment.wechatpay.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +13,6 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SettleInfo {
-    @JsonProperty(value = "profit_sharing")
+    @SerializedName(value = "profit_sharing")
     private boolean profitSharing;
 }

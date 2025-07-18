@@ -1,12 +1,9 @@
-package com.trionesdev.payment.alipay;
+package com.trionesdev.payment.alipay.v3.modal;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-
-import java.math.BigDecimal;
-import java.time.Instant;
 
 /**
  * @link https://opendocs.alipay.com/open/270/105902#%E5%BC%82%E6%AD%A5%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%9A%84%E9%AA%8C%E7%AD%BE
@@ -15,7 +12,7 @@ import java.time.Instant;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AlipayNotify {
+public class AlipayNotifyModel {
     /**
      * 支付宝应用的APPID。支付宝分配给开发者的应用 ID
      */
@@ -43,27 +40,27 @@ public class AlipayNotify {
     /**
      * 订单金额。本次交易支付订单金额，单位为人民币（元），精确到小数点后 2 位
      */
-    private BigDecimal totalAmount;
+    private String totalAmount;
     /**
      * 实收金额。商家在交易中实际收到的款项，单位为人民币（元），精确到小数点后 2 位
      */
-    private BigDecimal receiptAmount;
+    private String receiptAmount;
     /**
      * 开票金额。用户在交易中支付的可开发票的金额，单位为人民币（元），精确到小数点后 2 位
      */
-    private BigDecimal invoiceAmount;
+    private String invoiceAmount;
     /**
      * 用户在交易中支付的金额，单位为人民币（元）
      */
-    private BigDecimal buyerPayAmount;
+    private String buyerPayAmount;
     /**
      * 使用集分宝支付金额，单位为人民币（元）
      */
-    private BigDecimal pointAmount;
+    private String pointAmount;
     /**
      * 总退款金额。退款通知中，返回总退款金额，单位为人民币（元）
      */
-    private BigDecimal refundFee;
+    private String refundFee;
     /**
      * 订单标题/商品标题/交易标题/订单关键字等，是请求时对应参数，会在通知中原样传回
      */
@@ -72,17 +69,17 @@ public class AlipayNotify {
     /**
      * 交易创建时间
      */
-    private Instant gmtCreate;
+    private String gmtCreate;
     /**
      * 交易付款时间
      */
-    private Instant gmtPayment;
+    private String gmtPayment;
     /**
      * 交易退款时间
      */
-    private Instant gmtRefund;
+    private String gmtRefund;
     /**
      * 交易结束时间
      */
-    private Instant gmtClose;
+    private String gmtClose;
 }

@@ -1,6 +1,6 @@
 package com.trionesdev.payment.wechatpay.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,28 +17,28 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public  class WechatPayBaseCreateOrderRequest implements Serializable {
-    @JsonProperty(value = "appid")
+    @SerializedName(value = "appid")
     private String appId;
-    @JsonProperty(value = "mchid")
+    @SerializedName(value = "mchid")
     private String mchId;
     private String description;
-    @JsonProperty(value = "out_trade_no")
+    @SerializedName(value = "out_trade_no")
     private String outTradeNo;
     /**
      * Instant.now().toString() 得到的就是符合要求的时间字符串
      */
-    @JsonProperty(value = "time_expire")
+    @SerializedName(value = "time_expire")
     private String timeExpire;
     private String attach;
-    @JsonProperty(value = "notify_url")
+    @SerializedName(value = "notify_url")
     private String notifyUrl;
-    @JsonProperty(value = "goods_tag")
+    @SerializedName(value = "goods_tag")
     private String goodsTag;
     private Amount amount;
     private Detail detail;
-    @JsonProperty(value = "scene_info")
+    @SerializedName(value = "scene_info")
     private SceneInfo sceneInfo;
-    @JsonProperty(value = "settle_info")
+    @SerializedName(value = "settle_info")
     private SettleInfo settleInfo;
 
 
