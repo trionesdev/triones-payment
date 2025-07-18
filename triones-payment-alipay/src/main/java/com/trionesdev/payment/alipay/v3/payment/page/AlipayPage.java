@@ -14,7 +14,7 @@ public class AlipayPage extends AlipayPaymentCommons {
     }
 
     @SneakyThrows
-    public AlipayTradePagePayResponseModel pay(AlipayTradePagePayModel request) {
+    public AlipayTradePagePayResponseModel createOrder(AlipayTradePagePayModel request) {
         CustomizedParams customizedParams = new CustomizedParams();
         customizedParams.setBodyContent(GsonUtils.toJson(request));
         String pageRedirectionData = genericExecuteApi.pageExecute("alipay.trade.page.pay", "POST", null, "", "", customizedParams);

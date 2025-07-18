@@ -12,7 +12,7 @@ public class GoodsDetail {
     @SerializedName("goods_name")
     private String goodsName;
     private Long quantity;
-    private BigDecimal price;
+    private String price;
     @SerializedName("alipay_goods_id")
     private String alipayGoodsId;
     @SerializedName("goods_category")
