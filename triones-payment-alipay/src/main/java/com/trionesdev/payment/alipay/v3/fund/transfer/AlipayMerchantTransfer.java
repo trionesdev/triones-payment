@@ -17,10 +17,10 @@ public class AlipayMerchantTransfer  extends AlipayFundCommons {
 
     /**
      * 创建转账
+     * <a href="https://opendocs.alipay.com/open-v3/08e7ef12_alipay.fund.trans.uni.transfer?scene=ca56bca529e64125a2786703c6192d41&pathHash=e2c41149">...</a>
      *
-     * @param request
-     * @return
-     * @link https://opendocs.alipay.com/open-v3/08e7ef12_alipay.fund.trans.uni.transfer?scene=ca56bca529e64125a2786703c6192d41&pathHash=e2c41149
+     * @param request 包含转账请求参数的模型对象，具体参数详见 {@link AlipayFundTransUniTransferModel}
+     * @return 返回转账操作的响应数据，包含交易状态、交易号等信息，具体结构详见 {@link AlipayFundTransUniTransferResponseModel}
      */
     @SneakyThrows
     public AlipayFundTransUniTransferResponseModel createTransfer(AlipayFundTransUniTransferModel request) {

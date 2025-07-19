@@ -7,7 +7,7 @@ import lombok.experimental.SuperBuilder;
 
 /**
  * 支付结果异步通知参数模型
- * @link https://opendocs.alipay.com/open/270/105902#%E5%BC%82%E6%AD%A5%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%9A%84%E9%AA%8C%E7%AD%BE
+ *  <a href="https://opendocs.alipay.com/open/270/105902#%E5%BC%82%E6%AD%A5%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%9A%84%E9%AA%8C%E7%AD%BE">...</a>
  */
 @Data
 @SuperBuilder

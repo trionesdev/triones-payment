@@ -21,10 +21,13 @@ public class WechatPayApp extends WechatPayPaymentCommons {
     }
 
     /**
-     * APP下单API
-     *
-     * @param request
-     * @return
+     * 调用微信支付APP下单接口。
+     * <p>
+     * 该方法用于创建微信支付APP支付订单，并返回预支付交易单信息。
+     * </p>
+     * 
+     * @param request APP下单请求参数，包含支付相关详情，详见 {@link WechatPayAppCreateOrderRequest}
+     * @return 返回APP下单响应对象，包含预支付交易单ID，详见 {@link WechatPayAppCreateOrderResponse}
      */
     public WechatPayAppCreateOrderResponse createOrder(WechatPayAppCreateOrderRequest request) {
         PrepayResponse response = appService.prepay(request.toSdkRequest(wxPayConfig));
