@@ -13,7 +13,8 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * https://opendocs.alipay.com/open-v3/2423fad5_alipay.trade.page.pay?scene=22&pathHash=3eadd5d3
+ * 创建订单参数
+ * @link https://opendocs.alipay.com/open-v3/2423fad5_alipay.trade.page.pay?scene=22&pathHash=3eadd5d3
  */
 @Data
 public class AlipayTradePagePayModel {
