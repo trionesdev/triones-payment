@@ -14,8 +14,11 @@ public class AlipayOrderCode extends AlipayPaymentCommons {
 
     @SneakyThrows
     public AlipayTradePrecreateResponseModel createOrder(AlipayTradePrecreateModel model) {
-        if (StringUtils.isBlank(model.getProductCode())){
+        if (StringUtils.isBlank(model.getProductCode())) {
             model.setProductCode("QR_CODE_OFFLINE");
+        }
+        if (StringUtils.isBlank(model.getNotifyUrl())) {
+            model.setNotifyUrl(alipayConfig.getNotifyUrl());
         }
         return alipayTradeApi.precreate(model);
     }
