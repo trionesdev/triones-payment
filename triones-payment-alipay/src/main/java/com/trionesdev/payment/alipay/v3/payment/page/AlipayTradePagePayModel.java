@@ -54,4 +54,6 @@ public class AlipayTradePagePayModel {
     private InvoiceInfo invoiceInfo;
     @SerializedName("notify_url")
     private String notifyUrl;
+    @SerializedName("return_url")
+    private String returnUrl;
 }
