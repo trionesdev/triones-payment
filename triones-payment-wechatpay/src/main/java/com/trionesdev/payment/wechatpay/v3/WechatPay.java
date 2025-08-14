@@ -12,6 +12,7 @@ import java.util.Optional;
 
 public class WechatPay  {
 
+    @Getter
     private final WechatPayConfig wxPayConfig;
     @Getter
     private final WechatPayPayment payment;
