@@ -21,5 +21,4 @@ public class WechatPayCredentials {
     private String privateCert;
     private String privateKeyPath;
     private String privateCertPath;
-
 }

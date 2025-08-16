@@ -39,7 +39,7 @@ public class WechatPayCreateTransferRequest implements Serializable {
 
     public void initialize(WechatPayConfig config) {
         if (StringUtils.isBlank(this.getNotifyUrl())) {
-            this.notifyUrl = config.getTransactionNotifyUrl();
+            this.notifyUrl = config.getTransferNotifyUrl();
         }
     }
 
