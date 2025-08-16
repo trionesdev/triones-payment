@@ -5,11 +5,14 @@ import com.trionesdev.payment.wechatpay.v3.WechatPayConfig;
 import com.trionesdev.payment.wechatpay.v3.payment.model.notify.WechatPayNotifyParseRequest;
 import com.trionesdev.payment.wechatpay.v3.operation.model.*;
 import com.wechat.pay.java.core.http.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 运营工具
  */
 public class WechatPayOperation extends WechatPayBase {
+    private static final Logger logger = LoggerFactory.getLogger(WechatPayOperation.class);
     public WechatPayOperation(WechatPayConfig wxPayConfig) {
         super(wxPayConfig);
     }
