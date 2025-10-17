@@ -13,7 +13,7 @@ public class GsonUtils {
         gson =
                 new GsonBuilder()
                         .disableHtmlEscaping()
-                        .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                        .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
                         .addSerializationExclusionStrategy(
                                 new ExclusionStrategy() {
                                     @Override
