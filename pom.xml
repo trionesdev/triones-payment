@@ -5,15 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.trionesdev.payment</groupId>
-    <artifactId>triones-payment</artifactId>
+    <artifactId>payment</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>Triones:Payment</name>
     <modules>
-        <module>triones-payment-alipay</module>
-        <module>triones-payment-wechatpay</module>
-        <module>triones-payment-commons</module>
-        <module>triones-payment-dependencies</module>
+        <module>payment-alipay</module>
+        <module>payment-wechatpay</module>
+        <module>payment-commons</module>
+        <module>payment-dependencies</module>
     </modules>
 
     <properties>
@@ -26,7 +26,7 @@
         <dependencies>
             <dependency>
                 <groupId>com.trionesdev.payment</groupId>
-                <artifactId>triones-payment-dependencies</artifactId>
+                <artifactId>payment-dependencies</artifactId>
                 <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>

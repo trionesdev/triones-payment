@@ -2,8 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.trionesdev.payment</groupId>
-    <artifactId>triones-payment-dependencies</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>payment-dependencies</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
     <name>Triones:Payment:Dependencies</name>
     <url>http://maven.apache.org</url>
 
@@ -51,17 +51,17 @@
             </dependency>
             <dependency>
                 <groupId>com.trionesdev.payment</groupId>
-                <artifactId>triones-payment-commons</artifactId>
+                <artifactId>payment-commons</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.trionesdev.payment</groupId>
-                <artifactId>triones-payment-alipay</artifactId>
+                <artifactId>payment-alipay</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.trionesdev.payment</groupId>
-                <artifactId>triones-payment-wechatpay</artifactId>
+                <artifactId>payment-wechatpay</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

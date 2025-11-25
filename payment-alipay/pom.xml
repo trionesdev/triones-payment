@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>triones-payment</artifactId>
         <groupId>com.trionesdev.payment</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <artifactId>payment</artifactId>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <name>Triones:Pay:AliPay</name>
-    <artifactId>triones-payment-alipay</artifactId>
+    <artifactId>payment-alipay</artifactId>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.trionesdev.payment</groupId>
-            <artifactId>triones-payment-commons</artifactId>
+            <artifactId>payment-commons</artifactId>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.alipay.sdk</groupId>-->
